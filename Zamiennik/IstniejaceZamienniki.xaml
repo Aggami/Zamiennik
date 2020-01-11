@@ -6,6 +6,47 @@
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
         Title="Wyszukaj istniejące zamienniki" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="SelectionMode" Value="Single"></Setter>
+            <Setter Property="AlternatingRowBackground" Value="#FDCD99"></Setter>
+            <Setter Property="FrozenColumnCount" Value="2"></Setter>
+            <Setter Property="CanUserAddRows" Value="False"></Setter>
+            <Setter Property="CanUserDeleteRows" Value="False"></Setter>
+            <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+        </Style>
+
+        <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}"  >
+            <Setter Property="Background" Value="#B4312C" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="4"/>
+            <Style.Triggers>
+                <Trigger Property="SortDirection" Value="{x:Null}">
+                    <Setter Property="Background" Value="#B4312C" />
+                    <Setter Property="BorderBrush"  Value="Transparent" />
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="SortDirection" Value="{x:Null}" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FDCD99" />
+                    <Setter Property="BorderBrush" Value="#B4312C" />
+                </MultiTrigger>
+
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="true" />
+                        <Condition Property="SortDirection" Value="{x:Null}" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FDCD99" />
+                    <Setter Property="BorderBrush" Value="#FDCD99" />
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" MinWidth="25"></ColumnDefinition>
@@ -35,10 +76,19 @@
         <StackPanel Grid.Column="1" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10, 5, 20, 5">
                 <Label Content="Szukaj kursu: " Style="{StaticResource header}" Margin="0, 0, 10, 0"></Label>
-                <TextBox Width="100" Margin="0, 0, 10, 0"></TextBox>
+                <TextBox x:Name="searchBox" Width="100" Margin="0, 0, 10, 0"></TextBox>
                 <Button Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}"></Button>
             </StackPanel>
-            <DataGrid></DataGrid>
+            <DataGrid x:Name="courses"  IsReadOnly="True" Margin="10" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Kod kursu" Binding="{Binding Path=Kod_kursu}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Nazwa kursu" Binding="{Binding Path=Nazwa_kursu}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Wydzial" Binding="{Binding Path=ZZU}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="ECTS" Binding="{Binding Path=Punkty_ECTS}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Typ" Binding="{Binding Path=Forma_kursu}"></DataGridTextColumn>
+                    
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
 
     </Grid>

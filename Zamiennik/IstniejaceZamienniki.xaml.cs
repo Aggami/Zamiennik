@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL;
+using System.Collections;
+using System.Collections.ObjectModel;
+
 
 namespace Zamiennik
 {
@@ -19,9 +23,83 @@ namespace Zamiennik
     /// </summary>
     public partial class IstniejaceZamienniki : Window
     {
+        Kurs kurs = null;
+        ObservableCollection<Kurs> kursy = new ObservableCollection<Kurs>();
+
         public IstniejaceZamienniki()
         {
             InitializeComponent();
+            kursy.Add(new Kurs()
+            {
+                Punkty_ECTS = 4,
+                Czy_egzamin = true,
+                Czy_aktywny = false,
+                Forma_kursu = "laboratorium",
+                //Karta_przedmiotu,
+                Nazwa_kursu = "Projektowanie Oprogramowania",
+                Kod_kursu = "KX327",
+                ZZU = 180,
+                Typ_semestru = "zimowy",
+                Semestr = 5
+    });
+            kursy.Add(new Kurs()
+            {
+                Punkty_ECTS = 2,
+                Czy_egzamin = true,
+                Czy_aktywny = false,
+                Forma_kursu = "wykład",
+                //Karta_przedmiotu,
+                Nazwa_kursu = "Programowanie Aplikacji Multimedialnych",
+                Kod_kursu = "ZP435",
+                ZZU = 180,
+                Typ_semestru = "letni",
+                Semestr = 6
+            });
+            kursy.Add(new Kurs()
+            {
+                Punkty_ECTS = 2,
+                Czy_egzamin = true,
+                Czy_aktywny = false,
+                Forma_kursu = "laboratorium",
+                //Karta_przedmiotu,
+                Nazwa_kursu = "Bazy danych Oracle",
+                Kod_kursu = "IZ200",
+                ZZU = 180,
+                Typ_semestru = "zimowy",
+                Semestr = 3
+            });
+            kursy.Add(new Kurs()
+            {
+                Punkty_ECTS = 1,
+                Czy_egzamin = true,
+                Czy_aktywny = false,
+                Forma_kursu = "ćwiczenia",
+                //Karta_przedmiotu,
+                Nazwa_kursu = "Podstawy Programowania",
+                Kod_kursu = "RZ227",
+                ZZU = 180,
+                Typ_semestru = "letni",
+                Semestr = 2
+            });
+            courses.ItemsSource = kursy;
+        }
+
+        private void on_search_button_Click()
+        {
+            string toFind = searchBox.Text;
+            if (toFind == "")
+                MessageBox.Show("Wpisz frazę do wyszukania");
+            if (toFind.Length < 3 )
+                MessageBox.Show("Wpisz dłuższy tekst");
+
+            // wyszukanie i przygotowanie danych do datagrid
+
+
+        }
+
+        private void row_clicked()
+        {
+
         }
     }
 }
