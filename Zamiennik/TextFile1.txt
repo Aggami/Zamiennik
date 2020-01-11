@@ -1,0 +1,4 @@
+﻿#B4312C #B32017  kolor czerwony 
+ #FDCD99 żółty
+#231F20 czarny
+#F6F6F6 biały

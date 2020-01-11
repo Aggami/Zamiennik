@@ -24,5 +24,17 @@ namespace Zamiennik
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            IstniejaceZamienniki istniejace = new IstniejaceZamienniki();
+            istniejace.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            RozpatrzPropozycje rozpatrz = new RozpatrzPropozycje();
+            rozpatrz.Show();
+        }
     }
 }

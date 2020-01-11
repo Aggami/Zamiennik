@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Menu" Height="450" Width="800">
+    <UniformGrid>
+        <Button Content="Wyszukaj istniejący zamiennik" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Button_Click" />
+        <Button Content="Rozpatrz propozycję zamiennika" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" />
+
+    </UniformGrid>
 </Window>
