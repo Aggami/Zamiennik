@@ -8,17 +8,6 @@
         Title="Rozpatrz propozycję zamiennika" Height="600" Width="800" Background="#F6F6F6">
 
     <Window.Resources>
-        <Style TargetType="Button" x:Key="decisionButtons">
-            <Setter Property="Background" Value="#B4312C" />
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="Foreground" Value="#FDCD99"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="BorderBrush" Value="#FDCD99"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="5,5,5,5"/>
-            
-        </Style>
         <Style TargetType="{x:Type StackPanel}" x:Key="Courses">
             <Setter Property="Background" Value="#FDCD99"/>
             <Setter Property="Margin" Value="10"/>
@@ -51,6 +40,7 @@
     <StackPanel VerticalAlignment="Stretch" Orientation="Vertical" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
             <StackPanel Style="{StaticResource Courses}"  HorizontalAlignment="Left"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" CanVerticallyScroll="True" IsManipulationEnabled="True" >
+                <Label Content="Kurs zastępowany: " FontFamily="Segoe UI Light" Background="#F6F6F6"></Label>
                 <Label>Tytul 1</Label>
                 <Label Content="Typ zajęć: "></Label>
                 <Label Content="ECTS"></Label>
@@ -61,6 +51,7 @@
 
             </StackPanel>
             <StackPanel Style="{StaticResource Courses}">
+                <Label Content="Proponowany zamiennik: " FontFamily="Segoe UI Light" Background="#F6F6F6"></Label>
                 <Label>Tytul 1</Label>
                 <Label Content="Typ zajęć: "></Label>
                 <Label Content="ECTS"></Label>
@@ -70,24 +61,18 @@
                 <TextBlock >Kierunkowe efekty ksztalcenia:</TextBlock>
             </StackPanel>
         </StackPanel>
-        <Border Style ="{StaticResource decisionBord}" Width="300">
-            <Button Style ="{StaticResource decisionButtons}" Content="Obejrzyj karty przedmiotow"></Button>
-        </Border>
+
+            <Button Style ="{StaticResource decisionButtons}" Content="Obejrzyj karty przedmiotow" Width="300"></Button>
+
 
         <Label Content="Wpisz komentarz:" Foreground="#231F20" HorizontalAlignment="Left" FontFamily="Segoe UI Light" FontWeight="Bold" Margin="10, 0, 0 0" FontSize="18" />
-        <RichTextBox Height="60" Margin="10, 10, 10, 10"></RichTextBox>
+        <TextBox Height="60" Margin="10, 10, 10, 10" x:Name="komentarz"></TextBox>
         <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
-            <Border Style ="{StaticResource decisionBord}">
-                <Button Style ="{StaticResource decisionButtons}" Content="Akceptuj"></Button>
-            </Border>
-            <Border Style ="{StaticResource decisionBord}">
-                <Button Style ="{StaticResource decisionButtons}" Content="Odrzuć"></Button>
-            </Border>
-            <Border Style ="{StaticResource decisionBord}">
-                <Button Style ="{StaticResource decisionButtons}" Content="Rozpatrz później"></Button>
-            </Border>
-               
-       
+            <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0"  Content="Akceptuj" Click="Accept_Button_Click"></Button>
+            <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0" Content="Odrzuć" Click="Reject_Button_Click"></Button>
+            <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0" Content="Rozpatrz później" Click="Cancel_Button_Click"></Button>
+
+
         </StackPanel>
     </StackPanel>
 </Window>

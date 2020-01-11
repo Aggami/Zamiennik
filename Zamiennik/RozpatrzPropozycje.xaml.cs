@@ -23,5 +23,82 @@ namespace Zamiennik
         {
             InitializeComponent();
         }
+
+        private void Accept_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (check_if_comment() == false)
+            {
+                MessageBox.Show("Należy dodać komentarz! ");
+                return;
+            }
+            MessageBoxResult result = MessageBox.Show("Czy zaakceptować propozycję? \n Decyzja jest nieodwracalna", "Potwierdzenie", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                //zaakceptujPropozycje
+                MessageBox.Show("Propozycja zaakceptowana");
+                DialogResult = false;
+                this.Hide();
+
+
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                
+            }
+
+        }
+
+        private void Reject_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (check_if_comment() == false)
+            {
+                MessageBox.Show("Należy dodać komentarz! ");
+                return;
+            }
+            MessageBoxResult result = MessageBox.Show("Czy odrzucić propozycję? \n Decyzja jest nieodwracalna", "Potwierdzenie", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                //odrzucPropozycje
+                MessageBox.Show("Propozycja odrzucona");
+                DialogResult = false;
+                this.Hide();
+
+
+            }
+            else if (result == MessageBoxResult.No)
+            {
+
+            }
+
+        }
+
+        private void Cancel_Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            MessageBoxResult result = MessageBox.Show("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", "Potwierdzenie", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                //odrzucPropozycje
+                MessageBox.Show("Anulowano");
+                DialogResult = false;
+                this.Hide();
+
+
+            }
+            else if (result == MessageBoxResult.No)
+            {
+
+            }
+
+        }
+
+        private bool check_if_comment()
+        {
+            string comment = komentarz.Text;
+            if (comment == null||comment=="")
+                return false;
+            else
+                return true;
+        }
     }
 }

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Menu" Height="450" Width="800">
     <UniformGrid>
-        <Button Content="Wyszukaj istniejący zamiennik" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Button_Click" />
-        <Button Content="Rozpatrz propozycję zamiennika" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" />
+        <Button Style="{StaticResource decisionButtons}" Margin="5" Content="Wyszukaj istniejący zamiennik" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Button_Click" />
+        <Button Style="{StaticResource decisionButtons}" Margin="5" Content="Rozpatrz propozycję zamiennika" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" />
 
     </UniformGrid>
 </Window>

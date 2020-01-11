@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0" Background="LightGray" >
             <StackPanel DockPanel.Dock ="Top" Visibility="Hidden">
-                <Label>Nazwa</Label>
+                <Label Content="Nazwa" Style="{StaticResource header}"></Label>
                 <Label Content="Kod kursu" />
                 <Label Content="Typ" />
                 <Label Content="ECTS" />
@@ -24,7 +24,7 @@
             <StackPanel DockPanel.Dock="Bottom" Visibility="Hidden">
                 <Label Content=""/>
                 <Label Content=""/>
-                <Label Content="Zamienniki:"/>
+                <Label Content="Zamienniki:" Style="{StaticResource header}"/>
                 <DataGrid ></DataGrid>
             </StackPanel>  
             
@@ -34,9 +34,9 @@
         <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Left"></GridSplitter>
         <StackPanel Grid.Column="1" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10, 5, 20, 5">
-                <Label Content="Szukaj kursu: " Margin="0, 0, 10, 0"></Label>
+                <Label Content="Szukaj kursu: " Style="{StaticResource header}" Margin="0, 0, 10, 0"></Label>
                 <TextBox Width="100" Margin="0, 0, 10, 0"></TextBox>
-                <Button Content="Szukaj" Margin="0, 0, 10, 0"></Button>
+                <Button Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}"></Button>
             </StackPanel>
             <DataGrid></DataGrid>
         </StackPanel>

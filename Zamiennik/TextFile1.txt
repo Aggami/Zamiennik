@@ -2,3 +2,8 @@
  #FDCD99 żółty
 #231F20 czarny
 #F6F6F6 biały
+
+
+inna paleta:
+#2d2d2a czarny
+#4c4c47 szary#848fa5 niebieski
