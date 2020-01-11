@@ -11,11 +11,26 @@
             <ColumnDefinition Width="1*" MinWidth="25"></ColumnDefinition>
             <ColumnDefinition Width="3*" MinWidth="100"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Background="LightGray">
-            <Label>Nazwa</Label>
-            <Label>Punkty ects</Label>
+        <DockPanel Grid.Column="0" Background="LightGray" >
+            <StackPanel DockPanel.Dock ="Top" Visibility="Hidden">
+                <Label>Nazwa</Label>
+                <Label Content="Kod kursu" />
+                <Label Content="Typ" />
+                <Label Content="ECTS" />
+                <Label Content="Czy egzamin" />
+                <Label Content="Liczba godzin zajec" />
+                <Label Content="Plany studiow" />
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Bottom" Visibility="Hidden">
+                <Label Content=""/>
+                <Label Content=""/>
+                <Label Content="Zamienniki:"/>
+                <DataGrid ></DataGrid>
+            </StackPanel>  
             
-        </StackPanel>
+        </DockPanel>
+
+
         <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Left"></GridSplitter>
         <StackPanel Grid.Column="1" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10, 5, 20, 5">
