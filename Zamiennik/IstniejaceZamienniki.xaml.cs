@@ -84,7 +84,7 @@ namespace Zamiennik
             courses.ItemsSource = kursy;
         }
 
-        private void on_search_button_Click()
+        private void on_search_button_Click(object sender, RoutedEventArgs e)
         {
             string toFind = searchBox.Text;
             if (toFind == "")
@@ -97,9 +97,19 @@ namespace Zamiennik
 
         }
 
-        private void row_clicked()
+        private void row_clicked(object sender, RoutedEventArgs e)
         {
+            kurs = courses.SelectedItem as Kurs;
+            name.Text = kurs.Nazwa_kursu;
+            code.Content = "Kod kursu: "+kurs.Kod_kursu;
+            type.Content = "Typ zajęć: "+kurs.Forma_kursu;
+            ects.Content = "Liczba punktów ECTS: "+kurs.Punkty_ECTS;
+            if (kurs.Czy_egzamin) exam.Content = "Zakończony egzaminem. ";
+            else exam.Content = "Kończy się zaliczeniem. ";
+            hours.Content ="ZZU (całkowity nakład pracy):" + kurs.ZZU.ToString();
+            //plans
 
+            details.Visibility =Visibility.Visible ;
         }
     }
 }

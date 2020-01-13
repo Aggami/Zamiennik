@@ -47,6 +47,13 @@
             <Setter Property="Foreground" Value="#231F20"></Setter>
           
         </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="headerblock">
+            <Setter Property="FontFamily" Value="Segoe UI Light"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Foreground" Value="#231F20"></Setter>
+
+        </Style>
     </Application.Resources>
 </Application>
 

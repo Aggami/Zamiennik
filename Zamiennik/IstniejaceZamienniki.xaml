@@ -15,6 +15,10 @@
             <Setter Property="CanUserAddRows" Value="False"></Setter>
             <Setter Property="CanUserDeleteRows" Value="False"></Setter>
             <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="#4c4c47"/>
+            <Setter Property="ColumnWidth" Value="*"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
         </Style>
 
         <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}"  >
@@ -45,27 +49,33 @@
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#231F20"></Setter>
+            <Setter Property="FontWeight" Value="Light"></Setter>
+
+        </Style>
     </Window.Resources>
     
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" MinWidth="25"></ColumnDefinition>
-            <ColumnDefinition Width="3*" MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition Width="2*" MinWidth="100"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0" Background="LightGray" >
-            <StackPanel DockPanel.Dock ="Top" Visibility="Hidden">
-                <Label Content="Nazwa" Style="{StaticResource header}"></Label>
-                <Label Content="Kod kursu" />
-                <Label Content="Typ" />
-                <Label Content="ECTS" />
-                <Label Content="Czy egzamin" />
-                <Label Content="Liczba godzin zajec" />
-                <Label Content="Plany studiow" />
+            <StackPanel x:Name="details" DockPanel.Dock ="Top" Visibility="Hidden" Margin="10, 5,5,5">
+                <TextBlock x:Name="name" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource headerblock}" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+                <Label x:Name="code" Content="Kod kursu" />
+                <Label x:Name="type" Content="Typ" />
+                <Label x:Name="ects" Content="ECTS" />
+                <Label x:Name="exam" Content="Czy egzamin" />
+                <Label x:Name="hours" Content="Liczba godzin zajec" />
+                <Label x:Name="plans" Content="Plany studiow" />
             </StackPanel>
             <StackPanel DockPanel.Dock="Bottom" Visibility="Hidden">
                 <Label Content=""/>
                 <Label Content=""/>
-                <Label Content="Zamienniki:" Style="{StaticResource header}"/>
+                <Label Content="Zamienniki:"  Style="{StaticResource header}"/>
                 <DataGrid ></DataGrid>
             </StackPanel>  
             
@@ -79,7 +89,7 @@
                 <TextBox x:Name="searchBox" Width="100" Margin="0, 0, 10, 0"></TextBox>
                 <Button Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}"></Button>
             </StackPanel>
-            <DataGrid x:Name="courses"  IsReadOnly="True" Margin="10" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+            <DataGrid x:Name="courses" HorizontalAlignment="center"  IsReadOnly="True" Margin="10" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" MouseUp="row_clicked">
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Kod kursu" Binding="{Binding Path=Kod_kursu}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Nazwa kursu" Binding="{Binding Path=Nazwa_kursu}"></DataGridTextColumn>
