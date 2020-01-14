@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL;
 
 namespace Zamiennik
 {
@@ -19,6 +20,34 @@ namespace Zamiennik
     /// </summary>
     public partial class RozpatrzPropozycje : Window
     {
+        Propozycja propozycja = new Propozycja(new Kurs()
+        {
+            Punkty_ECTS = 4,
+            Czy_egzamin = true,
+            Czy_aktywny = false,
+            Forma_kursu = "laboratorium",
+            //Karta_przedmiotu,
+            Nazwa_kursu = "Projektowanie Oprogramowania",
+            Kod_kursu = "KX327",
+            ZZU = 180,
+            Typ_semestru = "zimowy",
+            Semestr = 5
+        }, new Kurs[]{new Kurs()
+            {
+                Punkty_ECTS = 2,
+                Czy_egzamin = true,
+                Czy_aktywny = false,
+                Forma_kursu = "wykład",
+                //Karta_przedmiotu,
+                Nazwa_kursu = "Programowanie Aplikacji Multimedialnych",
+                Kod_kursu = "ZP435",
+                ZZU = 180,
+                Typ_semestru = "letni",
+                Semestr = 6
+            }
+        }
+        );
+
         public RozpatrzPropozycje()
         {
             InitializeComponent();
