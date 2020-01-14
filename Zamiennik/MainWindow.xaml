@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
-        Title="Menu" Height="450" Width="800">
+        Title="Menu" Height="450" Width="800"
+        Style="{StaticResource CustomWindowStyle}">
     <UniformGrid>
         <Button Style="{StaticResource decisionButtons}" Margin="5" Content="Wyszukaj istniejący zamiennik" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Button_Click" />
         <Button Style="{StaticResource decisionButtons}" Margin="5" Content="Rozpatrz propozycję zamiennika" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" />
