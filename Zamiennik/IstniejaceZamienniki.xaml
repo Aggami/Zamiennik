@@ -10,24 +10,24 @@
     <Window.Resources>
         <Style TargetType="{x:Type DataGrid}">
             <Setter Property="SelectionMode" Value="Single"></Setter>
-            <Setter Property="AlternatingRowBackground" Value="#FDCD99"></Setter>
+            <Setter Property="AlternatingRowBackground" Value="#EEF8ED"></Setter>
             <Setter Property="FrozenColumnCount" Value="2"></Setter>
             <Setter Property="CanUserAddRows" Value="False"></Setter>
             <Setter Property="CanUserDeleteRows" Value="False"></Setter>
             <Setter Property="AutoGenerateColumns" Value="False"></Setter>
-            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="#4c4c47"/>
             <Setter Property="ColumnWidth" Value="*"/>
             <Setter Property="HeadersVisibility" Value="Column"/>
         </Style>
 
         <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}"  >
-            <Setter Property="Background" Value="#B4312C" />
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#2A6E19" />
+            <Setter Property="Foreground" Value="#BFFFDE" />
             <Setter Property="Padding" Value="4"/>
             <Style.Triggers>
                 <Trigger Property="SortDirection" Value="{x:Null}">
-                    <Setter Property="Background" Value="#B4312C" />
+                    <Setter Property="Background" Value="#2A6E19" />
                     <Setter Property="BorderBrush"  Value="Transparent" />
                 </Trigger>
                 <MultiTrigger>
@@ -35,8 +35,8 @@
                         <Condition Property="IsMouseOver" Value="True" />
                         <Condition Property="SortDirection" Value="{x:Null}" />
                     </MultiTrigger.Conditions>
-                    <Setter Property="Background" Value="#FDCD99" />
-                    <Setter Property="BorderBrush" Value="#B4312C" />
+                    <Setter Property="Background" Value="#2A6E19" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
                 </MultiTrigger>
 
                 <MultiTrigger>
@@ -44,11 +44,12 @@
                         <Condition Property="IsMouseOver" Value="true" />
                         <Condition Property="SortDirection" Value="{x:Null}" />
                     </MultiTrigger.Conditions>
-                    <Setter Property="Background" Value="#FDCD99" />
-                    <Setter Property="BorderBrush" Value="#FDCD99" />
+                    <Setter Property="Background" Value="#2A6E19" />
+                    <Setter Property="BorderBrush" Value="#2A6E19" />
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
+
 
         <Style TargetType="{x:Type Label}">
             <Setter Property="Foreground" Value="#231F20"></Setter>
@@ -62,7 +63,7 @@
             <ColumnDefinition Width="1*" MinWidth="25"></ColumnDefinition>
             <ColumnDefinition Width="2*" MinWidth="100"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DockPanel Grid.Column="0" Background="LightGray" >
+        <DockPanel Grid.Column="0" Background="#EEF8ED" >
             <StackPanel x:Name="details" DockPanel.Dock ="Top" Visibility="Hidden" Margin="10, 5,5,5">
                 <TextBlock x:Name="name" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource headerblock}" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
                 <Label x:Name="code" Content="Kod kursu" />
@@ -72,11 +73,21 @@
                 <Label x:Name="hours" Content="Liczba godzin zajec" />
                 <Label x:Name="plans" Content="Plany studiow" />
             </StackPanel>
-            <StackPanel DockPanel.Dock="Bottom" Visibility="Hidden">
+            <StackPanel x:Name="detailsGrid" DockPanel.Dock="Bottom" Visibility="Hidden">
                 <Label Content=""/>
                 <Label Content=""/>
                 <Label Content="Zamienniki:"  Style="{StaticResource header}"/>
-                <DataGrid ></DataGrid>
+                <DataGrid x:Name="Zamienniki" HorizontalAlignment="center"  IsReadOnly="True" Margin="10" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" MouseUp="Zamienniki_MouseUp">
+
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="Kod kursu" Binding="{Binding Path=Kod_kursu}" ></DataGridTextColumn>
+                        <DataGridTextColumn Header="Nazwy kursów" Binding="{Binding Path=Nazwa_kursu}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Kierunek" Binding="{Binding Path=ZZU}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Wydział" Binding="{Binding Path=Punkty_ECTS}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Typ" Binding="{Binding Path=Forma_kursu}"></DataGridTextColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>  
             
         </DockPanel>
@@ -87,7 +98,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10, 5, 20, 5">
                 <Label Content="Szukaj kursu: " Style="{StaticResource header}" Margin="0, 0, 10, 0"></Label>
                 <TextBox x:Name="searchBox" Width="100" Margin="0, 0, 10, 0"></TextBox>
-                <Button Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}"></Button>
+                <Button Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}" Click="on_search_button_Click"></Button>
             </StackPanel>
             <DataGrid x:Name="courses" HorizontalAlignment="center"  IsReadOnly="True" Margin="10" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" MouseUp="row_clicked">
                 <DataGrid.Columns >

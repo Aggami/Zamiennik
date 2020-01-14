@@ -100,5 +100,11 @@ namespace Zamiennik
             else
                 return true;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Cancel_Button_Click(sender, null);
+            e.Cancel = true;
+        }
     }
 }

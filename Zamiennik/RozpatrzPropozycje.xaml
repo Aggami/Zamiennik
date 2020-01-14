@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
+        Closing="Window_Closing"
         Title="Rozpatrz propozycję zamiennika" Height="600" Width="800" Background="#F6F6F6">
 
     <Window.Resources>
         <Style TargetType="{x:Type StackPanel}" x:Key="Courses">
-            <Setter Property="Background" Value="#FDCD99"/>
+            <Setter Property="Background" Value="#EEF9EB"/>
             <Setter Property="Margin" Value="10"/>
             <Setter Property="MinWidth" Value="200"/>
             <Style.Resources>
@@ -40,8 +41,8 @@
     <StackPanel VerticalAlignment="Stretch" Orientation="Vertical" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
             <StackPanel Style="{StaticResource Courses}"  HorizontalAlignment="Left"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" CanVerticallyScroll="True" IsManipulationEnabled="True" >
-                <Label Content="Kurs zastępowany: " FontFamily="Segoe UI Light" Background="#F6F6F6"></Label>
-                <Label>Tytul 1</Label>
+                <Label Content="Kurs zastępowany: " FontFamily="Segoe UI Light" ></Label>
+                <Label Background="#2A6E19" Foreground="#F5FFF8">Tytul 1</Label>
                 <Label Content="Typ zajęć: "></Label>
                 <Label Content="ECTS"></Label>
                 <Label Content="Plan studiow: "></Label>
@@ -51,8 +52,8 @@
 
             </StackPanel>
             <StackPanel Style="{StaticResource Courses}">
-                <Label Content="Proponowany zamiennik: " FontFamily="Segoe UI Light" Background="#F6F6F6"></Label>
-                <Label>Tytul 1</Label>
+                <Label Content="Proponowany zamiennik: " FontFamily="Segoe UI Light" ></Label>
+                <Label Background="#2A6E19" Foreground="#F5FFF8">Tytul 1</Label>
                 <Label Content="Typ zajęć: "></Label>
                 <Label Content="ECTS"></Label>
                 <Label Content="Plan studiow: "></Label>

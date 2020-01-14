@@ -25,6 +25,7 @@ namespace Zamiennik
     {
         Kurs kurs = null;
         ObservableCollection<Kurs> kursy = new ObservableCollection<Kurs>();
+        ObservableCollection<Kurs> aktualneKursy= new ObservableCollection<Kurs>();
 
         public IstniejaceZamienniki()
         {
@@ -87,13 +88,23 @@ namespace Zamiennik
         private void on_search_button_Click(object sender, RoutedEventArgs e)
         {
             string toFind = searchBox.Text;
+            searchBox.Clear();
             if (toFind == "")
+            {
                 MessageBox.Show("Wpisz frazę do wyszukania");
-            if (toFind.Length < 3 )
+                return;
+            }
+
+            if (toFind.Length < 3)
+            {
                 MessageBox.Show("Wpisz dłuższy tekst");
+                return;
+            }
 
             // wyszukanie i przygotowanie danych do datagrid
 
+            aktualneKursy = new ObservableCollection<Kurs>(from kurs in kursy where (kurs.Nazwa_kursu.Contains(toFind) || kurs.Kod_kursu.Contains(toFind)) select kurs);
+            courses.ItemsSource = aktualneKursy;
 
         }
 
@@ -107,9 +118,16 @@ namespace Zamiennik
             if (kurs.Czy_egzamin) exam.Content = "Zakończony egzaminem. ";
             else exam.Content = "Kończy się zaliczeniem. ";
             hours.Content ="ZZU (całkowity nakład pracy):" + kurs.ZZU.ToString();
+            Zamienniki.ItemsSource = kursy;
+            detailsGrid.Visibility = Visibility.Visible;
             //plans
 
             details.Visibility =Visibility.Visible ;
+        }
+
+        private void Zamienniki_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
