@@ -49,7 +49,6 @@
     <Compile Include="Plan_studiow.cs" />
     <Compile Include="Poziom_Ksztalcenia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Propozycja.cs" />
     <Compile Include="Propozycja_zamiennika.cs" />
     <Compile Include="Rok_akademicki.cs" />
     <Compile Include="Status_propozycji.cs" />

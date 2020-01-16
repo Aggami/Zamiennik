@@ -4,6 +4,6 @@ public class Efekt_Ksztalcenia {
 	private string symbol_efektu_ksztalcenia;
 	private string nazwa;
 
-	private Plan_studiow zawierajacy;
+	private Plan_studiow plan_studiow;
 
 }
