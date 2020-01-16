@@ -17,7 +17,7 @@ namespace Dostep_Do_Danych
         public DbSet<Kurs> Kursy { get; set; }
         public DbSet<Zamiennik_kursu> Zamienniki { get; set; }
         public DbSet<Propozycja_zamiennika> Propozycje { get; set; }
-        public DbSet<Efekt_Ksztalcenia> Efekty { get; set; }
+        public DbSet<Efekt_ksztalcenia> Efekty { get; set; }
         public DbSet<Plan_studiow> Plany_studiow { get; set; }
         public DbSet<Rok_akademicki> Lata_akademickie { get; set; }
         public DbSet<Kierunek_studiow> Kierunki{ get; set; }
