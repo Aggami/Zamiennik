@@ -20,37 +20,52 @@ namespace Zamiennik
     /// </summary>
     public partial class RozpatrzPropozycje : Window
     {
-        Propozycja propozycja = new Propozycja(new Kurs()
+        Propozycja_zamiennika propozycja = new Propozycja_zamiennika(new Kurs()
         {
             Punkty_ECTS = 4,
             Czy_egzamin = true,
             Czy_aktywny = false,
-            Forma_kursu = "laboratorium",
+            Forma_kursu = Forma_Kursu.Laboratorium,
             //Karta_przedmiotu,
             Nazwa_kursu = "Projektowanie Oprogramowania",
             Kod_kursu = "KX327",
             ZZU = 180,
-            Typ_semestru = "zimowy",
+            Typ_semestru = Typ_Semestru.Semestr_zimowy,
             Semestr = 5
-        }, new Kurs[]{new Kurs()
-            {
-                Punkty_ECTS = 2,
-                Czy_egzamin = true,
-                Czy_aktywny = false,
-                Forma_kursu = "wykład",
-                //Karta_przedmiotu,
-                Nazwa_kursu = "Programowanie Aplikacji Multimedialnych",
-                Kod_kursu = "ZP435",
-                ZZU = 180,
-                Typ_semestru = "letni",
-                Semestr = 6
-            }
-        }
+        }, new List<Kurs>()
         );
 
         public RozpatrzPropozycje()
         {
             InitializeComponent();
+            propozycja.Kurs_zastepujacy.Add(
+                new Kurs()
+                {
+                    Punkty_ECTS = 2,
+                    Czy_egzamin = true,
+                    Czy_aktywny = false,
+                    Forma_kursu = Forma_Kursu.Wyklad,
+                    //Karta_przedmiotu,
+                    Nazwa_kursu = "Programowanie Aplikacji Multimedialnych",
+                    Kod_kursu = "ZP435",
+                    ZZU = 180,
+                    Typ_semestru = Typ_Semestru.Semestr_letni,
+                    Semestr = 6
+                });
+            k1Nazwa.Content = propozycja.Kurs_zastepowany.Nazwa_kursu;
+            k1Typ.Content = "Typ semestru: "+propozycja.Kurs_zastepowany.Typ_semestru;
+
+            k1Ects.Content = "Punkty ECTS: "+propozycja.Kurs_zastepowany.Punkty_ECTS.ToString();
+            k1Plan.Text = "W8, Informatyka 2017/2018";
+            k1Efekty.Text = "XYZ";
+
+
+            k2Nazwa.Content = propozycja.Kurs_zastepujacy[0].Nazwa_kursu;
+            k2Typ.Content = "Typ semestru: " + propozycja.Kurs_zastepujacy[0].Typ_semestru;
+
+            k2Ects.Content = "Punkty ECTS: "+ propozycja.Kurs_zastepujacy[0].Punkty_ECTS.ToString();
+            k2Plan.Text = "W8, Informatyka 2017/2018";
+            k2Efekty.Text = "XYZ";
         }
 
         private void Accept_Button_Click(object sender, RoutedEventArgs e)
