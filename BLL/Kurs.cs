@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class Kurs {
 	private int punkty_ECTS;
@@ -22,7 +24,11 @@ public class Kurs {
     public bool Czy_aktywny { get => czy_aktywny; set => czy_aktywny = value; }
     public Forma_Kursu Forma_kursu { get => forma_kursu; set => forma_kursu = value; }
     public string Karta_przedmiotu { get => karta_przedmiotu; set => karta_przedmiotu = value; }
+
+    [Required]
     public string Nazwa_kursu { get => nazwa_kursu; set => nazwa_kursu = value; }
+
+    [Key]
     public string Kod_kursu { get => kod_kursu; set => kod_kursu = value; }
     public int ZZU { get => zZU; set => zZU = value; }
     public Typ_Semestru Typ_semestru { get => typ_semestru; set => typ_semestru = value; }

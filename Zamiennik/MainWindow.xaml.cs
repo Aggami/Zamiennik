@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Dostep_Do_Danych;
 
 namespace Zamiennik
 {
@@ -23,6 +24,7 @@ namespace Zamiennik
         public MainWindow()
         {
             InitializeComponent();
+            var db = new ZamiennikKontekst();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

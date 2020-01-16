@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testy", "Testy\Testy.csproj", "{557CDE57-ED34-43DC-B1A8-6489E52F273F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dostep_Do_Danych", "Dostep_Do_Danych\Dostep_Do_Danych.csproj", "{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{557CDE57-ED34-43DC-B1A8-6489E52F273F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{557CDE57-ED34-43DC-B1A8-6489E52F273F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{557CDE57-ED34-43DC-B1A8-6489E52F273F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
