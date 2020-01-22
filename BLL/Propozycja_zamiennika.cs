@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class Propozycja_zamiennika {
+    private int propozycja_zamiennika_id;
 	private Status_propozycji status;
 	private string komentarz_Opiniodawcy;
 
@@ -20,6 +23,8 @@ public class Propozycja_zamiennika {
     public string Komentarz_Opiniodawcy { get => komentarz_Opiniodawcy; set => komentarz_Opiniodawcy = value; }
     public Kurs Kurs_zastepowany { get => kurs_zastepowany; set => kurs_zastepowany = value; }
     public List<Kurs> Kurs_zastepujacy { get => kurs_zastepujacy; set => kurs_zastepujacy = value; }
+    [Key]
+    public int Propozycja_zamiennika_id { get => propozycja_zamiennika_id; set => propozycja_zamiennika_id = value; }
     //private Opiniodawca rozpatruje2;
 
 }

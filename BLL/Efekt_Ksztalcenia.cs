@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-public class Efekt_Ksztalcenia {
+public class Efekt_ksztalcenia {
 	private Typ_efektu_ksztalcenia typ;
 
     

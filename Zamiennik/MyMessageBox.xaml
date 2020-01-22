@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Potwierdzenie" Height="120" Width="200">
 <StackPanel HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="41,0,40.6,0.4">
-            <TextBox x:Name="komunikat" FontSize="15" Margin="10" HorizontalAlignment="Center" Text="Czy na pewno?" ></TextBox>
+            <TextBox x:Name="komunikat" FontSize="12" Margin="10" HorizontalAlignment="Center" Text="Czy na pewno?" ></TextBox>
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="przycisk1" Content="Tak" Margin="10" Style="{StaticResource decisionButtons}" Visibility="Visible"></Button>
+                <Button x:Name="przycisk1" Content="Tak" Margin="10" Style="{StaticResource decisionButtons}" Visibility="Visible" Click="Yes_Click"></Button>
                 <Button x:Name="przycisk2" Content="Nie" Margin="10" Style="{StaticResource decisionButtons}" Visibility="Visible"></Button>
             </StackPanel>
         </StackPanel>

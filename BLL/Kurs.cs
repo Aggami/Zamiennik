@@ -7,22 +7,22 @@ public class Kurs {
 	private int punkty_ECTS;
 	private bool czy_egzamin;
 	private bool czy_aktywny;
-	private Forma_Kursu forma_kursu;
+	private Forma_kursu forma_kursu;
 	private string karta_przedmiotu;
 	private string nazwa_kursu;
 	private string kod_kursu;
 	private int zZU;
-	private Typ_Semestru typ_semestru;
+	private Typ_semestru typ_semestru;
 	private int semestr;
 
-	private System.Collections.Generic.List<Efekt_Ksztalcenia> efekty;
+	private System.Collections.Generic.List<Efekt_ksztalcenia> efekty;
 	private System.Collections.Generic.List<Zamiennik_kursu> zamienniki;
 	private Plan_studiow plan_studiow;
 
     public int Punkty_ECTS { get => punkty_ECTS; set => punkty_ECTS = value; }
     public bool Czy_egzamin { get => czy_egzamin; set => czy_egzamin = value; }
     public bool Czy_aktywny { get => czy_aktywny; set => czy_aktywny = value; }
-    public Forma_Kursu Forma_kursu { get => forma_kursu; set => forma_kursu = value; }
+    public Forma_kursu Forma_kursu { get => forma_kursu; set => forma_kursu = value; }
     public string Karta_przedmiotu { get => karta_przedmiotu; set => karta_przedmiotu = value; }
 
     [Required]
@@ -31,9 +31,9 @@ public class Kurs {
     [Key]
     public string Kod_kursu { get => kod_kursu; set => kod_kursu = value; }
     public int ZZU { get => zZU; set => zZU = value; }
-    public Typ_Semestru Typ_semestru { get => typ_semestru; set => typ_semestru = value; }
+    public Typ_semestru Typ_semestru { get => typ_semestru; set => typ_semestru = value; }
     public int Semestr { get => semestr; set => semestr = value; }
-    public List<Efekt_Ksztalcenia> Efekty { get => efekty; set => efekty = value; }
+    public List<Efekt_ksztalcenia> Efekty { get => efekty; set => efekty = value; }
     public List<Zamiennik_kursu> Zamienniki { get => zamienniki; set => zamienniki = value; }
     public Plan_studiow Plan_studiow { get => plan_studiow; set => plan_studiow = value; }
 

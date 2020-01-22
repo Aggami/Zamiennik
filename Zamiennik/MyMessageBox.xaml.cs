@@ -49,5 +49,9 @@ namespace Zamiennik
             this.przycisk2.Visibility = Visibility.Collapsed;
         }
 
+        private void Yes_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

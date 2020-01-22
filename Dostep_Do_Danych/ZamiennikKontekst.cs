@@ -10,9 +10,7 @@ namespace Dostep_Do_Danych
 {
     public class ZamiennikKontekst : DbContext
     {
-        public ZamiennikKontekst()
-        {
-        }
+      
 
         public DbSet<Kurs> Kursy { get; set; }
         public DbSet<Zamiennik_kursu> Zamienniki { get; set; }
@@ -22,6 +20,6 @@ namespace Dostep_Do_Danych
         public DbSet<Rok_akademicki> Lata_akademickie { get; set; }
         public DbSet<Kierunek_studiow> Kierunki{ get; set; }
         public DbSet<Wydzial> Wydzialy { get; set; }
-
+        
     }
 }

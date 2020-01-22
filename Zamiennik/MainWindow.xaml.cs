@@ -25,6 +25,35 @@ namespace Zamiennik
         {
             InitializeComponent();
             var db = new ZamiennikKontekst();
+            //MessageBox.Show(db.Database.Connection.ConnectionString);
+            /*
+            Kurs k =new Kurs()
+            {
+                Punkty_ECTS = 4,
+                Czy_egzamin = true,
+                Czy_aktywny = false,
+                Forma_kursu = Forma_kursu.Laboratorium,
+                //Karta_przedmiotu,
+                Nazwa_kursu = "Projektowanie Oprogramowania",
+                Kod_kursu = "KX327",
+                ZZU = 180,
+                Typ_semestru = Typ_semestru.Semestr_zimowy,
+                Semestr = 5
+            };
+            
+            db.Kursy.Add(k);*/
+            db.SaveChanges();
+
+            /*
+            var query = from k in db.Kursy
+                        orderby k.Nazwa_kursu
+                        select k;
+            string s = "";
+            foreach (var q in query){
+                s += q.Kod_kursu + " ";
+            }
+            MessageBox.Show(s);
+            */
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

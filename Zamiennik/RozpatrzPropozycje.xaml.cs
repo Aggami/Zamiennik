@@ -25,12 +25,12 @@ namespace Zamiennik
             Punkty_ECTS = 4,
             Czy_egzamin = true,
             Czy_aktywny = false,
-            Forma_kursu = Forma_Kursu.Laboratorium,
+            Forma_kursu = Forma_kursu.Laboratorium,
             //Karta_przedmiotu,
             Nazwa_kursu = "Projektowanie Oprogramowania",
             Kod_kursu = "KX327",
             ZZU = 180,
-            Typ_semestru = Typ_Semestru.Semestr_zimowy,
+            Typ_semestru = Typ_semestru.Semestr_zimowy,
             Semestr = 5
         }, new List<Kurs>()
         );
@@ -44,12 +44,12 @@ namespace Zamiennik
                     Punkty_ECTS = 2,
                     Czy_egzamin = true,
                     Czy_aktywny = false,
-                    Forma_kursu = Forma_Kursu.Wyklad,
+                    Forma_kursu = Forma_kursu.Wyklad,
                     //Karta_przedmiotu,
                     Nazwa_kursu = "Programowanie Aplikacji Multimedialnych",
                     Kod_kursu = "ZP435",
                     ZZU = 180,
-                    Typ_semestru = Typ_Semestru.Semestr_letni,
+                    Typ_semestru = Typ_semestru.Semestr_letni,
                     Semestr = 6
                 });
             k1Nazwa.Content = propozycja.Kurs_zastepowany.Nazwa_kursu;
