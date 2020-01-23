@@ -25,7 +25,7 @@ namespace Zamiennik
         {
             InitializeComponent();
             var db = new ZamiennikKontekst();
-            //MessageBox.Show(db.Database.Connection.ConnectionString);
+            MessageBox.Show(db.Database.Connection.ConnectionString);
             /*
             Kurs k =new Kurs()
             {

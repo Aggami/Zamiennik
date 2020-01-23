@@ -8,7 +8,7 @@ public class Kurs {
 	private bool czy_egzamin;
 	private bool czy_aktywny;
 	private Forma_kursu forma_kursu;
-	private string karta_przedmiotu;
+	private byte[] karta_przedmiotu;
 	private string nazwa_kursu;
 	private string kod_kursu;
 	private int zZU;
@@ -23,7 +23,7 @@ public class Kurs {
     public bool Czy_egzamin { get => czy_egzamin; set => czy_egzamin = value; }
     public bool Czy_aktywny { get => czy_aktywny; set => czy_aktywny = value; }
     public Forma_kursu Forma_kursu { get => forma_kursu; set => forma_kursu = value; }
-    public string Karta_przedmiotu { get => karta_przedmiotu; set => karta_przedmiotu = value; }
+    public byte[] Karta_przedmiotu { get => karta_przedmiotu; set => karta_przedmiotu = value; }
 
     [Required]
     public string Nazwa_kursu { get => nazwa_kursu; set => nazwa_kursu = value; }

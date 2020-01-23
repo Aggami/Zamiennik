@@ -8,6 +8,14 @@ public class Rok_akademicki {
 	private DateTime data_zakonczenia;
     private int rok_akademicki_id;
 
+    public Rok_akademicki(string nazwa, DateTime data_rozpoczecia, DateTime data_zakonczenia, int rok_akademicki_id)
+    {
+        this.nazwa = nazwa;
+        this.data_rozpoczecia = data_rozpoczecia;
+        this.data_zakonczenia = data_zakonczenia;
+        this.rok_akademicki_id = rok_akademicki_id;
+    }
+
     public string Nazwa { get => nazwa; set => nazwa = value; }
     public DateTime Data_rozpoczecia { get => data_rozpoczecia; set => data_rozpoczecia = value; }
     public DateTime Data_zakonczenia { get => data_zakonczenia; set => data_zakonczenia = value; }

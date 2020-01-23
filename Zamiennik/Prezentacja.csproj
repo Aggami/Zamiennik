@@ -130,13 +130,17 @@
     <Resource Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
+    <ProjectReference Include="..\BLL\Logika_Biznesowa.csproj">
       <Project>{247a6882-b9d8-430d-aa59-7b46f6b9fdcf}</Project>
-      <Name>BLL</Name>
+      <Name>Logika_Biznesowa</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dostep_Do_Danych\Dostep_Do_Danych.csproj">
       <Project>{eeeb52ec-3896-4ec1-acef-b9e499636dcf}</Project>
       <Name>Dostep_Do_Danych</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Uslugi\Uslugi.csproj">
+      <Project>{8f6d9d5c-a85a-4d93-b61c-282a4e22b477}</Project>
+      <Name>Uslugi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

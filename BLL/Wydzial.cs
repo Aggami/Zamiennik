@@ -10,6 +10,12 @@ public class Wydzial {
     public int Numer_wydzialu { get => numer_wydzialu; set => numer_wydzialu = value; }
     public string Nazwa { get => nazwa; set => nazwa = value; }
 
+    public Wydzial(int numer_wydzialu, string nazwa)
+    {
+        this.numer_wydzialu = numer_wydzialu;
+        this.nazwa = nazwa;
+    }
+
 
     //private Dziekan kieruje2;
 

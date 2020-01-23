@@ -14,6 +14,20 @@ public class Zamiennik_kursu {
 
 	private System.Collections.Generic.List<Kurs> kursy_skladowe;
 
+
+    //uwaga: dodaæ panowanie nad derived
+    public Zamiennik_kursu(int id_zamiennika, List<Kurs> kursy_skladowe)
+    {
+        this.id_zamiennika = id_zamiennika;
+        this.kursy_skladowe = kursy_skladowe;
+        foreach (Kurs k in kursy_skladowe){
+            if (k.Czy_egzamin) this.czy_Egzamin = true;
+            this.punkty_ECTS += k.Punkty_ECTS;
+            this.typ_semestru = k.Typ_semestru;
+            if (!k.Czy_aktywny) this.czy_aktywny = false;
+        }
+    }
+
     public int Punkty_ECTS { get => punkty_ECTS; set => punkty_ECTS = value; }
     public bool Czy_Egzamin { get => czy_Egzamin; set => czy_Egzamin = value; }
     public Poziom_ksztalcenia Poziom_ksztalcenia { get => poziom_ksztalcenia; set => poziom_ksztalcenia = value; }

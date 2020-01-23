@@ -5,11 +5,13 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prezentacja", "Zamiennik\Prezentacja.csproj", "{E73ADE78-B433-42D3-9A9D-A0CE53742399}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{247A6882-B9D8-430D-AA59-7B46F6B9FDCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logika_Biznesowa", "BLL\Logika_Biznesowa.csproj", "{247A6882-B9D8-430D-AA59-7B46F6B9FDCF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testy", "Testy\Testy.csproj", "{557CDE57-ED34-43DC-B1A8-6489E52F273F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dostep_Do_Danych", "Dostep_Do_Danych\Dostep_Do_Danych.csproj", "{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uslugi", "Uslugi\Uslugi.csproj", "{8F6D9D5C-A85A-4D93-B61C-282A4E22B477}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEEB52EC-3896-4EC1-ACEF-B9E499636DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6D9D5C-A85A-4D93-B61C-282A4E22B477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6D9D5C-A85A-4D93-B61C-282A4E22B477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6D9D5C-A85A-4D93-B61C-282A4E22B477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6D9D5C-A85A-4D93-B61C-282A4E22B477}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

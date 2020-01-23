@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 //using BLL;
 using System.Collections;
 using System.Collections.ObjectModel;
+using Uslugi;
 
 
 namespace Zamiennik
@@ -24,65 +25,13 @@ namespace Zamiennik
     public partial class IstniejaceZamienniki : Window
     {
         Kurs kurs = null;
-        ObservableCollection<Kurs> kursy = new ObservableCollection<Kurs>();
         ObservableCollection<Kurs> aktualneKursy= new ObservableCollection<Kurs>();
+        ObservableCollection<Zamiennik_kursu> aktualneZamienniki = new ObservableCollection<Zamiennik_kursu>();
+        
 
         public IstniejaceZamienniki()
         {
             InitializeComponent();
-            kursy.Add(new Kurs()
-            {
-                Punkty_ECTS = 4,
-                Czy_egzamin = true,
-                Czy_aktywny = false,
-                Forma_kursu = Forma_kursu.Laboratorium,
-                //Karta_przedmiotu,
-                Nazwa_kursu = "Projektowanie Oprogramowania",
-                Kod_kursu = "KX327",
-                ZZU = 180,
-                Typ_semestru = Typ_semestru.Semestr_zimowy,
-                Semestr = 5
-    });
-            kursy.Add(new Kurs()
-            {
-                Punkty_ECTS = 2,
-                Czy_egzamin = true,
-                Czy_aktywny = false,
-                Forma_kursu = Forma_kursu.Wyklad,
-                //Karta_przedmiotu,
-                Nazwa_kursu = "Programowanie Aplikacji Multimedialnych",
-                Kod_kursu = "ZP435",
-                ZZU = 180,
-                Typ_semestru = Typ_semestru.Semestr_letni,
-                Semestr = 6
-            });
-            kursy.Add(new Kurs()
-            {
-                Punkty_ECTS = 2,
-                Czy_egzamin = true,
-                Czy_aktywny = false,
-                Forma_kursu = Forma_kursu.Wyklad,
-                //Karta_przedmiotu,
-                Nazwa_kursu = "Bazy danych Oracle",
-                Kod_kursu = "IZ200",
-                ZZU = 180,
-                Typ_semestru = Typ_semestru.Semestr_zimowy,
-                Semestr = 3
-            });
-            kursy.Add(new Kurs()
-            {
-                Punkty_ECTS = 1,
-                Czy_egzamin = true,
-                Czy_aktywny = false,
-                Forma_kursu = Forma_kursu.Cwiczenia,
-                //Karta_przedmiotu,
-                Nazwa_kursu = "Podstawy Programowania",
-                Kod_kursu = "RZ227",
-                ZZU = 180,
-                Typ_semestru = Typ_semestru.Semestr_zimowy,
-                Semestr = 2
-            });
-            courses.ItemsSource = kursy;
         }
 
         private void on_search_button_Click(object sender, RoutedEventArgs e)
@@ -102,8 +51,8 @@ namespace Zamiennik
             }
 
             // wyszukanie i przygotowanie danych do datagrid
-
-            aktualneKursy = new ObservableCollection<Kurs>(from kurs in kursy where (kurs.Nazwa_kursu.Contains(toFind) || kurs.Kod_kursu.Contains(toFind)) select kurs);
+            
+            aktualneKursy = new ObservableCollection<Kurs>(Wyszukiwarka.ZnajdzKurs(toFind));
             courses.ItemsSource = aktualneKursy;
 
         }
@@ -111,6 +60,7 @@ namespace Zamiennik
         private void row_clicked(object sender, RoutedEventArgs e)
         {
             kurs = courses.SelectedItem as Kurs;
+            GeneratorDanych.DodajZamienniki(kurs);
             name.Text = kurs.Nazwa_kursu;
             code.Content = "Kod kursu: "+kurs.Kod_kursu;
             type.Content = "Typ zajęć: "+kurs.Forma_kursu;
@@ -118,7 +68,7 @@ namespace Zamiennik
             if (kurs.Czy_egzamin) exam.Content = "Zakończony egzaminem. ";
             else exam.Content = "Kończy się zaliczeniem. ";
             hours.Content ="ZZU (całkowity nakład pracy):" + kurs.ZZU.ToString();
-            Zamienniki.ItemsSource = kursy;
+            Zamienniki.ItemsSource = kurs.Zamienniki;
             detailsGrid.Visibility = Visibility.Visible;
             //plans
 

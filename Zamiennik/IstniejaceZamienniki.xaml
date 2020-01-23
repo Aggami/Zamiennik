@@ -101,7 +101,7 @@
                 <TextBox x:Name="searchBox" Width="100" Margin="0, 0, 10, 0"></TextBox>
                 <Button Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}" Click="on_search_button_Click"></Button>
             </StackPanel>
-            <DataGrid x:Name="courses" HorizontalAlignment="center"  IsReadOnly="True" Margin="10" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" MouseUp="row_clicked">
+            <DataGrid x:Name="courses" HorizontalAlignment="center"  IsReadOnly="True" Margin="10" Visibility="Hidden" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" MouseUp="row_clicked">
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Kod kursu" Binding="{Binding Path=Kod_kursu}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Nazwa kursu" Binding="{Binding Path=Nazwa_kursu}"></DataGridTextColumn>
