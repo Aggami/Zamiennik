@@ -34,14 +34,20 @@ namespace Dostep_Do_Danych
         }
 
      
-        public IQueryable<T> GetAll()
+        public IQueryable<T> ZnajdzWszystkie()
         {
             return zbior;
         }
 
-        public T GetById(int id)
+        public void Edytuj(T obj)
         {
-            return zbior.Find(id);
+            var rekord =zbior.Find(obj);
+            if (rekord == null)
+            {
+                return;
+            }
+            zbior.Attach(obj);
+
         }
 
         public List<T>ZnajdzPoPredykacie(Expression<Func<T, bool>> predykat)

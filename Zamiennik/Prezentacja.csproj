@@ -68,6 +68,9 @@
     <Compile Include="MyMessageBox.xaml.cs">
       <DependentUpon>MyMessageBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PodgladZamiennika.xaml.cs">
+      <DependentUpon>PodgladZamiennika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RozpatrzPropozycje.xaml.cs">
       <DependentUpon>RozpatrzPropozycje.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MyMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PodgladZamiennika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
