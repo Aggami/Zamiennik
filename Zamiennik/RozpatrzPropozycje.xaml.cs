@@ -72,14 +72,14 @@ namespace Zamiennik
         {
             if (check_if_comment() == false)
             {
-                MessageBox.Show("Należy dodać komentarz! ");
+                Komunikat.Show("Należy dodać komentarz! ");
                 return;
             }
-            MessageBoxResult result = MessageBox.Show("Czy zaakceptować propozycję? \n Decyzja jest nieodwracalna", "Potwierdzenie", MessageBoxButton.YesNo);
+            MessageBoxResult result = Komunikat.ShowWithResult("Czy zaakceptować propozycję? \n Decyzja jest nieodwracalna", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
                 //zaakceptujPropozycje
-                MessageBox.Show("Propozycja zaakceptowana");
+                Komunikat.Show("Propozycja zaakceptowana");
                 DialogResult = false;
                 this.Hide();
 
@@ -96,14 +96,14 @@ namespace Zamiennik
         {
             if (check_if_comment() == false)
             {
-                MessageBox.Show("Należy dodać komentarz! ");
+                Komunikat.Show("Należy dodać komentarz! ");
                 return;
             }
-            MessageBoxResult result = MessageBox.Show("Czy odrzucić propozycję? \n Decyzja jest nieodwracalna", "Potwierdzenie", MessageBoxButton.YesNo);
+            MessageBoxResult result = Komunikat.ShowWithResult("Czy odrzucić propozycję? \n Decyzja jest nieodwracalna", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
                 //odrzucPropozycje
-                MessageBox.Show("Propozycja odrzucona");
+                Komunikat.Show("Propozycja odrzucona");
                 DialogResult = false;
                 this.Hide();
 
@@ -119,11 +119,11 @@ namespace Zamiennik
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
             
-            MessageBoxResult result = MessageBox.Show("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", "Potwierdzenie", MessageBoxButton.YesNo);
+            MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
                 //odrzucPropozycje
-                MessageBox.Show("Anulowano");
+                Komunikat.Show("Anulowano");
                 DialogResult = false;
                 this.Hide();
 

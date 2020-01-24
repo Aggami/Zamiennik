@@ -65,8 +65,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MyMessageBox.xaml.cs">
-      <DependentUpon>MyMessageBox.xaml</DependentUpon>
+    <Compile Include="OknoKomunikatu.xaml.cs">
+      <DependentUpon>OknoKomunikatu.xaml</DependentUpon>
     </Compile>
     <Compile Include="PodgladZamiennika.xaml.cs">
       <DependentUpon>PodgladZamiennika.xaml</DependentUpon>
@@ -74,6 +74,7 @@
     <Compile Include="RozpatrzPropozycje.xaml.cs">
       <DependentUpon>RozpatrzPropozycje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Komunikat.cs" />
     <Page Include="IstniejaceZamienniki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,7 +94,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MyMessageBox.xaml">
+    <Page Include="OknoKomunikatu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

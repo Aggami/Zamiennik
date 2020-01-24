@@ -11,18 +11,20 @@ namespace Uslugi
     public class Wyszukiwarka
     {
         private static ZamiennikKontekst db = new ZamiennikKontekst();
+        private static Repozytorium<Kurs> kursy = new Repozytorium<Kurs>(db);
+        private static Repozytorium<Zamiennik_kursu> zamienniki = new Repozytorium<Zamiennik_kursu>(db);
 
         public static List<Kurs> ZnajdzKurs(string fraza)
         {
             fraza = fraza.ToLower();
-            Repozytorium<Kurs> kursy = new Repozytorium <Kurs>(db);
             return kursy.ZnajdzPoPredykacie(k => k.Nazwa_kursu.ToLower().Contains(fraza) || k.Kod_kursu.ToLower().Contains(fraza));
         }
         /*
         public static List<Zamiennik_kursu> ZnajdzZamienniki(Kurs k)
         {
-                       
+              
         }
         */
+
     }
 }
