@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Uslugi
 {
-    class ZarzadzaniePropozycja
+    public class ZarzadzaniePropozycja
     {
         private static ZamiennikKontekst db = new ZamiennikKontekst();
         private static Repozytorium<Propozycja_zamiennika> propozycjeRep = new Repozytorium<Propozycja_zamiennika>(db);

@@ -79,6 +79,7 @@ namespace Uslugi
             List<Kurs> kursySkladowe = kursy.ZnajdzPoPredykacie(k => k.Kod_kursu == "RZ227" || k.Kod_kursu == "IZ200");
             List<Zamiennik_kursu> zamienniki = new List<Zamiennik_kursu>();
             zamienniki.Add(new Zamiennik_kursu(1, kursySkladowe));
+            if (kurs.Zamienniki == null) kurs.Zamienniki = new List<Zamiennik_kursu>();
             kurs.Zamienniki.AddRange(zamienniki);
             db.SaveChanges();
         }

@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-//using BLL;
+using Uslugi;
 
 namespace Zamiennik
 {
@@ -20,24 +20,107 @@ namespace Zamiennik
     /// </summary>
     public partial class RozpatrzPropozycje : Window
     {
-        Propozycja_zamiennika propozycja = new Propozycja_zamiennika(new Kurs()
-        {
-            Punkty_ECTS = 4,
-            Czy_egzamin = true,
-            Czy_aktywny = false,
-            Forma_kursu = Forma_kursu.Laboratorium,
-            //Karta_przedmiotu,
-            Nazwa_kursu = "Projektowanie Oprogramowania",
-            Kod_kursu = "KX327",
-            ZZU = 180,
-            Typ_semestru = Typ_semestru.Semestr_zimowy,
-            Semestr = 5
-        }, new List<Kurs>()
-        );
+        Propozycja_zamiennika propozycja;
 
-        public RozpatrzPropozycje()
+        public RozpatrzPropozycje(Propozycja_zamiennika propozycja)
         {
             InitializeComponent();
+            this.propozycja = propozycja;
+        }
+
+        private void Accept_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (check_if_comment() == false)
+            {
+                Komunikat.Show("Należy dodać komentarz! ");
+                return;
+            }
+
+            MessageBoxResult result = Komunikat.ShowWithResult("Czy zaakceptować propozycję? \n Decyzja jest nieodwracalna", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                ZarzadzaniePropozycja.zaakceptujPropozycje(propozycja, komentarz.Text);
+                Komunikat.Show("Propozycja zaakceptowana");
+                DialogResult = false;
+                this.Hide();
+
+
+            }
+
+        }
+
+        private void Reject_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (check_if_comment() == false)
+            {
+                Komunikat.Show("Należy dodać komentarz! ");
+                return;
+            }
+
+            MessageBoxResult result = Komunikat.ShowWithResult("Czy odrzucić propozycję? \n Decyzja jest nieodwracalna", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                ZarzadzaniePropozycja.odrzucPropozycje(propozycja, komentarz.Text);
+                Komunikat.Show("Propozycja odrzucona");
+                DialogResult = false;
+                this.Hide();
+
+
+            }
+
+        }
+
+        private void Cancel_Button_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+            MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                //odrzucPropozycje
+                Komunikat.Show("Anulowano");
+                DialogResult = false;
+                this.Hide();
+
+
+            }
+            else if (result == MessageBoxResult.No)
+            {
+
+            }
+            */
+
+        }
+
+        private bool check_if_comment()
+        {
+            string comment = komentarz.Text;
+            if (comment == null||comment=="")
+                return false;
+            else
+                return true;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                //odrzucPropozycje
+                Komunikat.Show("Anulowano");
+                DialogResult = false;
+                this.Hide();
+
+
+            }
+            e.Cancel = true;
+        }
+    }
+}
+
+
+/*InitializeComponent();
             propozycja.Kurs_zastepujacy.Add(
                 new Kurs()
                 {
@@ -66,89 +149,4 @@ namespace Zamiennik
             k2Ects.Content = "Punkty ECTS: "+ propozycja.Kurs_zastepujacy[0].Punkty_ECTS.ToString();
             k2Plan.Text = "W8, Informatyka 2017/2018";
             k2Efekty.Text = "XYZ";
-        }
-
-        private void Accept_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (check_if_comment() == false)
-            {
-                Komunikat.Show("Należy dodać komentarz! ");
-                return;
-            }
-            MessageBoxResult result = Komunikat.ShowWithResult("Czy zaakceptować propozycję? \n Decyzja jest nieodwracalna", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                //zaakceptujPropozycje
-                Komunikat.Show("Propozycja zaakceptowana");
-                DialogResult = false;
-                this.Hide();
-
-
-            }
-            else if (result == MessageBoxResult.No)
-            {
-                
-            }
-
-        }
-
-        private void Reject_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (check_if_comment() == false)
-            {
-                Komunikat.Show("Należy dodać komentarz! ");
-                return;
-            }
-            MessageBoxResult result = Komunikat.ShowWithResult("Czy odrzucić propozycję? \n Decyzja jest nieodwracalna", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                //odrzucPropozycje
-                Komunikat.Show("Propozycja odrzucona");
-                DialogResult = false;
-                this.Hide();
-
-
-            }
-            else if (result == MessageBoxResult.No)
-            {
-
-            }
-
-        }
-
-        private void Cancel_Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-            MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                //odrzucPropozycje
-                Komunikat.Show("Anulowano");
-                DialogResult = false;
-                this.Hide();
-
-
-            }
-            else if (result == MessageBoxResult.No)
-            {
-
-            }
-
-        }
-
-        private bool check_if_comment()
-        {
-            string comment = komentarz.Text;
-            if (comment == null||comment=="")
-                return false;
-            else
-                return true;
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Cancel_Button_Click(sender, null);
-            e.Cancel = true;
-        }
-    }
-}
+ */

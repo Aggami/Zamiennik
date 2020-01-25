@@ -40,13 +40,13 @@ namespace Zamiennik
             searchBox.Clear();
             if (toFind == "")
             {
-                MessageBox.Show("Wpisz frazę do wyszukania");
+                Komunikat.Show("Wpisz frazę do wyszukania");
                 return;
             }
 
             if (toFind.Length < 3)
             {
-                MessageBox.Show("Wpisz dłuższy tekst");
+                Komunikat.Show("Wpisz dłuższy tekst");
                 return;
             }
 
@@ -54,13 +54,15 @@ namespace Zamiennik
             
             aktualneKursy = new ObservableCollection<Kurs>(Wyszukiwarka.ZnajdzKurs(toFind));
             courses.ItemsSource = aktualneKursy;
+            if (aktualneKursy.Count == 0) Komunikat.Show("Nie znaleziono kursu.");
+            else courses.Visibility = Visibility.Visible;
 
         }
 
         private void row_clicked(object sender, RoutedEventArgs e)
         {
             kurs = courses.SelectedItem as Kurs;
-            GeneratorDanych.DodajZamienniki(kurs);
+            //GeneratorDanych.DodajZamienniki(kurs);
             name.Text = kurs.Nazwa_kursu;
             code.Content = "Kod kursu: "+kurs.Kod_kursu;
             type.Content = "Typ zajęć: "+kurs.Forma_kursu;
@@ -68,6 +70,7 @@ namespace Zamiennik
             if (kurs.Czy_egzamin) exam.Content = "Zakończony egzaminem. ";
             else exam.Content = "Kończy się zaliczeniem. ";
             hours.Content ="ZZU (całkowity nakład pracy):" + kurs.ZZU.ToString();
+
             Zamienniki.ItemsSource = kurs.Zamienniki;
             detailsGrid.Visibility = Visibility.Visible;
             //plans
