@@ -86,6 +86,7 @@ namespace Uslugi
 
         public static void DodajWydziały()
         {
+            Repozytorium<Wydzial> wydzialyRep = new Repozytorium<Wydzial>(db);
             Wydzial w1 = new Wydzial(1, "Wydział Architektury");
             Wydzial w2 = new Wydzial(2, "Wydział Budownictwa");
             Wydzial w3 = new Wydzial(3, "Wydział Chemiczny");
@@ -99,11 +100,15 @@ namespace Uslugi
             Wydzial w11 = new Wydzial(11, "Wydział Podstawowych Problemów Techniki");
             Wydzial w12 = new Wydzial(12, "Wydział Elektroniki Mikrosystemów i Fotoniki");
             Wydzial w13 = new Wydzial(13, "Wydział Matematyki");
+            
             List<Wydzial> wydzialy = new List<Wydzial>{ w1, w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13 };
-            Repozytorium<Wydzial> wydzialyRep = new Repozytorium<Wydzial>(db);
             wydzialyRep.WstawKolekcje(wydzialy);
+            
             db.SaveChanges();
         }
+
+
+        
 
 
 

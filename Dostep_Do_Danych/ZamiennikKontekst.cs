@@ -13,7 +13,8 @@ namespace Dostep_Do_Danych
 
         public ZamiennikKontekst() : base("ZamiennikKontekst")
         {
-            Database.SetInitializer<ZamiennikKontekst>(new DropCreateDatabaseIfModelChanges<ZamiennikKontekst>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ZamiennikKontekst, Dostep_Do_Danych.Migrations.Configuration>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<ZamiennikKontekst>());
         }
 
 
@@ -26,6 +27,40 @@ namespace Dostep_Do_Danych
         public DbSet<Kierunek_studiow> Kierunki{ get; set; }
         public DbSet<Wydzial> Wydzialy { get; set; }
         public DbSet<Grupa_kursow> Grupy_kursow { get; set; }
-        
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Plan_studiow>()
+                   .HasMany(p => p.Lata)
+                   .WithMany()
+                   .Map(cs =>
+                   {
+                       cs.MapLeftKey("IdPlanu");
+                       cs.MapRightKey("IdRoku");
+                       cs.ToTable("LataPlanowStudiow");
+                   });
+
+            modelBuilder.Entity<Kurs>()
+                   .HasMany(k => k.Efekty)
+                   .WithMany()
+                   .Map(cs =>
+                   {
+                       cs.MapLeftKey("KodKursu");
+                       cs.MapRightKey("SymbolEfektu");
+                       cs.ToTable("EfektyKsztalceniaKursow");
+                   });
+
+            modelBuilder.Entity<Zamiennik_kursu>()
+                   .HasMany(z => z.Kursy_skladowe)
+                   .WithMany()
+                   .Map(cs =>
+                   {
+                       cs.MapLeftKey("IdZamiennika");
+                       cs.MapRightKey("KodKursuSkladowego");
+                       cs.ToTable("KursySkladoweZamiennika");
+                   });
+        }
+
+
     }
 }

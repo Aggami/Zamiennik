@@ -1,0 +1,22 @@
+﻿<Window x:Class="Zamiennik.WyborPropozycji"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zamiennik"
+        mc:Ignorable="d"
+        Title="WyborPropozycji" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Wybierz propozycję do rozpatrzenia: " HorizontalAlignment="Center" Margin="10"></TextBlock>
+            <DataGrid x:Name="Propozycje" HorizontalAlignment="Center">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Id Propozycji" Binding="{Binding Path=Propozycja_zamiennika_id}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Kurs Zastępowany" Binding="{Binding Path=Kurs_zastepowany.Nazwa_kursu}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Kurs zastąpujący" Binding="{Binding Path=Kurs_zastepujacy.Nazwa_kursu}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        
+    </Grid>
+</Window>

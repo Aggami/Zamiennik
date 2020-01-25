@@ -75,6 +75,9 @@
       <DependentUpon>RozpatrzPropozycje.xaml</DependentUpon>
     </Compile>
     <Compile Include="Komunikat.cs" />
+    <Compile Include="WyborPropozycji.xaml.cs">
+      <DependentUpon>WyborPropozycji.xaml</DependentUpon>
+    </Compile>
     <Page Include="IstniejaceZamienniki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RozpatrzPropozycje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WyborPropozycji.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

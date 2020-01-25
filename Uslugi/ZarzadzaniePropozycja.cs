@@ -29,9 +29,9 @@ namespace Uslugi
             db.SaveChanges();
         }
 
-        public static void znajdzDostepnePropozycje()
+        public static List<Propozycja_zamiennika> znajdzDostepnePropozycje()
         {
-            propozycjeRep.ZnajdzPoPredykacie(p => p.Status == Status_propozycji.Zgloszona);
+            return propozycjeRep.ZnajdzPoPredykacie(p => p.Status == Status_propozycji.Zgloszona);
         }
 
     }

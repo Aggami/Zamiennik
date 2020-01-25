@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dostep_Do_Danych;
+using Uslugi;
 
 namespace Zamiennik
 {
@@ -24,6 +25,7 @@ namespace Zamiennik
         public MainWindow()
         {
             InitializeComponent();
+           
             
         }
 
@@ -36,8 +38,8 @@ namespace Zamiennik
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            RozpatrzPropozycje rozpatrz = new RozpatrzPropozycje(null);
-            rozpatrz.ShowDialog();
+            WyborPropozycji wybor = new WyborPropozycji();
+            wybor.ShowDialog();
         }
     }
 }
