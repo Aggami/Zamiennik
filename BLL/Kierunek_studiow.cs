@@ -8,6 +8,10 @@ public class Kierunek_studiow {
 
 	private Wydzial wydzial;
 
+    public Kierunek_studiow()
+    {
+    }
+
     public Kierunek_studiow(string nazwa, Wydzial wydzial)
     {
         this.nazwa = nazwa;

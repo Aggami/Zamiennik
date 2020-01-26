@@ -15,6 +15,10 @@ public class Zamiennik_kursu {
 	private System.Collections.Generic.List<Kurs> kursy_skladowe;
     private Kurs kurs_zastepowany;
 
+    public Zamiennik_kursu()
+    {
+    }
+
     //uwaga: dodaæ panowanie nad derived
     public Zamiennik_kursu(Kurs kurs, List<Kurs> kursy_skladowe)
     {
@@ -26,6 +30,7 @@ public class Zamiennik_kursu {
             this.typ_semestru = k.Typ_semestru;
             if (!k.Czy_aktywny) this.czy_aktywny = false;
             this.poziom_ksztalcenia = k.Plan_studiow.Poziom_ksztalcenia;
+            this.czy_studia_stacjonarne = k.Plan_studiow.Czy_studia_stacjonarne;
         }
     }
 

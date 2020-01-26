@@ -25,8 +25,6 @@ namespace Zamiennik
         public MainWindow()
         {
             InitializeComponent();
-            ZamiennikKontekst db = new ZamiennikKontekst();
-            db.SaveChanges();
             
         }
 

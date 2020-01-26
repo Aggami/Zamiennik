@@ -8,12 +8,15 @@ public class Rok_akademicki {
 	private DateTime data_zakonczenia;
     private int rok_akademicki_id;
 
-    public Rok_akademicki(string nazwa, DateTime data_rozpoczecia, DateTime data_zakonczenia, int rok_akademicki_id)
+    public Rok_akademicki()
+    {
+    }
+
+    public Rok_akademicki(string nazwa, DateTime data_rozpoczecia, DateTime data_zakonczenia)
     {
         this.nazwa = nazwa;
         this.data_rozpoczecia = data_rozpoczecia;
         this.data_zakonczenia = data_zakonczenia;
-        this.rok_akademicki_id = rok_akademicki_id;
     }
 
     [Key]

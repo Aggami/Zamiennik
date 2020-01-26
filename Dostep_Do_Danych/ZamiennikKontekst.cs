@@ -30,6 +30,7 @@ namespace Dostep_Do_Danych
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Plan_studiow>()
                    .HasMany(p => p.Lata)
                    .WithMany()

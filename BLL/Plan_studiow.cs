@@ -12,6 +12,10 @@ public class Plan_studiow {
     private System.Collections.Generic.List<Rok_akademicki> lata;
     private Kierunek_studiow kierunek;
 
+    public Plan_studiow()
+    {
+    }
+
     public Plan_studiow(Poziom_ksztalcenia poziom_ksztalcenia, bool czy_studia_stacjonarne, int czas_trwania, List<Rok_akademicki> lata, Kierunek_studiow kierunek)
     {
         this.poziom_ksztalcenia = poziom_ksztalcenia;

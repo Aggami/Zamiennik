@@ -7,10 +7,21 @@ public class Grupa_kursow : Kurs  {
     private int grupa_kursow_id;
 	private System.Collections.Generic.List<Kurs> kursy_skladowe;
 
-    public Grupa_kursow(int grupa_kursow_id, List<Kurs> kursy_skladowe):base(kursy_skladowe[0].Kod_kursu + "GK", kursy_skladowe[0].Nazwa_kursu)
+    public Grupa_kursow()
     {
-        this.grupa_kursow_id = grupa_kursow_id;
+    }
+
+    public Grupa_kursow( List<Kurs> kursy_skladowe, Forma_kursu forma):base(kursy_skladowe[0].Kod_kursu + "GK", kursy_skladowe[0].Nazwa_kursu)
+    {
         this.kursy_skladowe = kursy_skladowe;
+        this.Forma_kursu = forma;
+        foreach (Kurs k in kursy_skladowe)
+        {
+            this.Punkty_ECTS += k.Punkty_ECTS;
+            if (k.Czy_egzamin) this.Czy_egzamin = true;
+            this.Typ_semestru = k.Typ_semestru;
+            this.Semestr = k.Semestr;
+        }
     }
 
     [Key]

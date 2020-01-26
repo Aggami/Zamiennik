@@ -22,6 +22,10 @@ public class Kurs {
 	private Plan_studiow plan_studiow;
     private bool czy_aktywny;
 
+    public Kurs()
+    {
+    }
+
     public Kurs(string kod_kursu, string nazwa_kursu)
     {
         this.kod_kursu = kod_kursu;

@@ -17,6 +17,10 @@ public class Wydzial {
         this.nazwa = nazwa;
     }
 
+    public Wydzial()
+    {
+    }
+
 
     //private Dziekan kieruje2;
 
