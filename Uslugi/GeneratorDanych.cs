@@ -13,6 +13,7 @@ namespace Uslugi
     {
         static DbContext db = new ZamiennikKontekst();
 
+
         public static void DodajKursy()
         {
             List<Kurs> kursy = new List<Kurs>();

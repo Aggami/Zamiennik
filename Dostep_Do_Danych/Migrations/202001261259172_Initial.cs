@@ -12,8 +12,8 @@
                 c => new
                     {
                         Symbol_efektu_ksztalcenia = c.String(nullable: false, maxLength: 128),
-                        Typ = c.Int(nullable: false),
                         Nazwa = c.String(),
+                        Typ = c.Int(nullable: false),
                         Plan_studiow_Plan_studiow_id = c.Int(),
                     })
                 .PrimaryKey(t => t.Symbol_efektu_ksztalcenia)
@@ -40,7 +40,7 @@
                     {
                         Kierunek_id = c.Int(nullable: false, identity: true),
                         Nazwa = c.String(),
-                        Wydzial_Numer_wydzialu = c.Int(),
+                        Wydzial_Numer_wydzialu = c.String(maxLength: 3),
                     })
                 .PrimaryKey(t => t.Kierunek_id)
                 .ForeignKey("dbo.Wydzials", t => t.Wydzial_Numer_wydzialu)
@@ -50,7 +50,7 @@
                 "dbo.Wydzials",
                 c => new
                     {
-                        Numer_wydzialu = c.Int(nullable: false, identity: true),
+                        Numer_wydzialu = c.String(nullable: false, maxLength: 3),
                         Nazwa = c.String(),
                     })
                 .PrimaryKey(t => t.Numer_wydzialu);
@@ -60,7 +60,6 @@
                 c => new
                     {
                         Rok_akademicki_id = c.Int(nullable: false, identity: true),
-                        Nazwa = c.String(),
                         Data_rozpoczecia = c.DateTime(nullable: false),
                         Data_zakonczenia = c.DateTime(nullable: false),
                     })
@@ -71,13 +70,13 @@
                 c => new
                     {
                         Kod_kursu = c.String(nullable: false, maxLength: 128),
+                        Nazwa_kursu = c.String(nullable: false),
                         Punkty_ECTS = c.Int(nullable: false),
+                        Forma_kursu = c.Int(nullable: false),
+                        ZZU = c.Int(nullable: false),
                         Czy_egzamin = c.Boolean(nullable: false),
                         Czy_aktywny = c.Boolean(nullable: false),
-                        Forma_kursu = c.Int(nullable: false),
                         Karta_przedmiotu = c.Binary(),
-                        Nazwa_kursu = c.String(nullable: false),
-                        ZZU = c.Int(nullable: false),
                         Typ_semestru = c.Int(nullable: false),
                         Semestr = c.Int(nullable: false),
                         Grupa_kursow_id = c.Int(),
@@ -96,17 +95,11 @@
                 c => new
                     {
                         Id_zamiennika = c.Int(nullable: false, identity: true),
-                        Punkty_ECTS = c.Int(nullable: false),
-                        Czy_Egzamin = c.Boolean(nullable: false),
-                        Poziom_ksztalcenia = c.Int(nullable: false),
-                        Czy_studia_stacjonarne = c.Boolean(nullable: false),
-                        Czy_aktywny = c.Boolean(nullable: false),
-                        Typ_semestru = c.Int(nullable: false),
-                        Kurs_Kod_kursu = c.String(maxLength: 128),
+                        Kurs_zastepowany_Kod_kursu = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id_zamiennika)
-                .ForeignKey("dbo.Kurs", t => t.Kurs_Kod_kursu)
-                .Index(t => t.Kurs_Kod_kursu);
+                .ForeignKey("dbo.Kurs", t => t.Kurs_zastepowany_Kod_kursu)
+                .Index(t => t.Kurs_zastepowany_Kod_kursu);
             
             CreateTable(
                 "dbo.Propozycja_zamiennika",
@@ -170,9 +163,9 @@
             DropForeignKey("dbo.Propozycja_zamiennika", "Kurs_zastepujacy_Kod_kursu", "dbo.Kurs");
             DropForeignKey("dbo.Propozycja_zamiennika", "Kurs_zastepowany_Kod_kursu", "dbo.Kurs");
             DropForeignKey("dbo.Kurs", "Grupa_kursow_Kod_kursu", "dbo.Kurs");
-            DropForeignKey("dbo.Zamiennik_kursu", "Kurs_Kod_kursu", "dbo.Kurs");
             DropForeignKey("dbo.KursySkladoweZamiennika", "KodKursuSkladowego", "dbo.Kurs");
             DropForeignKey("dbo.KursySkladoweZamiennika", "IdZamiennika", "dbo.Zamiennik_kursu");
+            DropForeignKey("dbo.Zamiennik_kursu", "Kurs_zastepowany_Kod_kursu", "dbo.Kurs");
             DropForeignKey("dbo.Kurs", "Plan_studiow_Plan_studiow_id", "dbo.Plan_studiow");
             DropForeignKey("dbo.EfektyKsztalceniaKursow", "SymbolEfektu", "dbo.Efekt_ksztalcenia");
             DropForeignKey("dbo.EfektyKsztalceniaKursow", "KodKursu", "dbo.Kurs");
@@ -189,7 +182,7 @@
             DropIndex("dbo.LataPlanowStudiow", new[] { "IdPlanu" });
             DropIndex("dbo.Propozycja_zamiennika", new[] { "Kurs_zastepujacy_Kod_kursu" });
             DropIndex("dbo.Propozycja_zamiennika", new[] { "Kurs_zastepowany_Kod_kursu" });
-            DropIndex("dbo.Zamiennik_kursu", new[] { "Kurs_Kod_kursu" });
+            DropIndex("dbo.Zamiennik_kursu", new[] { "Kurs_zastepowany_Kod_kursu" });
             DropIndex("dbo.Kurs", new[] { "Grupa_kursow_Kod_kursu" });
             DropIndex("dbo.Kurs", new[] { "Plan_studiow_Plan_studiow_id" });
             DropIndex("dbo.Kierunek_studiow", new[] { "Wydzial_Numer_wydzialu" });

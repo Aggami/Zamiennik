@@ -51,9 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202001251835537_Initial.cs" />
-    <Compile Include="Migrations\202001251835537_Initial.designer.cs">
-      <DependentUpon>202001251835537_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202001261259172_Initial.cs" />
+    <Compile Include="Migrations\202001261259172_Initial.designer.cs">
+      <DependentUpon>202001261259172_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001261324272_ZamiennikKontekstv2.cs" />
+    <Compile Include="Migrations\202001261324272_ZamiennikKontekstv2.designer.cs">
+      <DependentUpon>202001261324272_ZamiennikKontekstv2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repozytorium.cs" />
@@ -73,8 +77,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001251835537_Initial.resx">
-      <DependentUpon>202001251835537_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001261259172_Initial.resx">
+      <DependentUpon>202001261259172_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001261324272_ZamiennikKontekstv2.resx">
+      <DependentUpon>202001261324272_ZamiennikKontekstv2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

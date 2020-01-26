@@ -18,6 +18,7 @@ namespace Uslugi
         {
             fraza = fraza.ToLower();
             return kursy.ZnajdzPoPredykacie(k => k.Nazwa_kursu.ToLower().Contains(fraza) || k.Kod_kursu.ToLower().Contains(fraza));
+            //return new List<Kurs>(kursy.ZnajdzWszystkie());
         }
         /*
         public static List<Zamiennik_kursu> ZnajdzZamienniki(Kurs k)

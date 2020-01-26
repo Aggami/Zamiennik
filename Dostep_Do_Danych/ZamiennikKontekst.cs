@@ -58,7 +58,8 @@ namespace Dostep_Do_Danych
                        cs.MapLeftKey("IdZamiennika");
                        cs.MapRightKey("KodKursuSkladowego");
                        cs.ToTable("KursySkladoweZamiennika");
-                   });
+                   }
+                   );
         }
 
 

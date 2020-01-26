@@ -11,6 +11,7 @@
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "Dostep_Do_Danych.ZamiennikKontekst";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Dostep_Do_Danych.ZamiennikKontekst context)

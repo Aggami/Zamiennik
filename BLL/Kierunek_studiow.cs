@@ -8,15 +8,15 @@ public class Kierunek_studiow {
 
 	private Wydzial wydzial;
 
-    public Kierunek_studiow(string nazwa, int kierunek_id, Wydzial wydzial)
+    public Kierunek_studiow(string nazwa, Wydzial wydzial)
     {
         this.nazwa = nazwa;
-        this.kierunek_id = kierunek_id;
         this.wydzial = wydzial;
     }
 
-    public string Nazwa { get => nazwa; set => nazwa = value; }
-    public Wydzial Wydzial { get => wydzial; set => wydzial = value; }
     [Key]
     public int Kierunek_id { get => kierunek_id; set => kierunek_id = value; }
+    public string Nazwa { get => nazwa; set => nazwa = value; }
+    public Wydzial Wydzial { get => wydzial; set => wydzial = value; }
+    
 }

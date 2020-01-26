@@ -5,5 +5,11 @@ public enum Forma_kursu {
 	Laboratorium,
 	Projekt,
 	Seminarium,
+    WykladCwiczenia,
+    WykladLaboratorium,
+    WykladProjekt,
+    WykladCwiczeniaLaboratorium,
+    CwiczeniaLaboratorium 
+    
 
 }

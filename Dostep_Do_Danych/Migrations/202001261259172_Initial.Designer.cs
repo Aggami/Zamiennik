@@ -13,7 +13,7 @@ namespace Dostep_Do_Danych.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202001251835537_Initial"; }
+            get { return "202001261259172_Initial"; }
         }
         
         string IMigrationMetadata.Source

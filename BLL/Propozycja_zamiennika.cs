@@ -22,14 +22,16 @@ public class Propozycja_zamiennika {
     {
         Kurs_zastepowany = kurs_zastepowany;
         Kurs_zastepujacy = kurs_zastepujacy;
+        Status = Status_propozycji.Zgloszona;
     }
-
-    public Status_propozycji Status { get => status; set => status = value; }
-    public string Komentarz_Opiniodawcy { get => komentarz_Opiniodawcy; set => komentarz_Opiniodawcy = value; }
-    public Kurs Kurs_zastepowany { get => kurs_zastepowany; set => kurs_zastepowany = value; }
-    public Kurs Kurs_zastepujacy { get => kurs_zastepujacy; set => kurs_zastepujacy = value; }
     [Key]
     public int Propozycja_zamiennika_id { get => propozycja_zamiennika_id; set => propozycja_zamiennika_id = value; }
+    public Kurs Kurs_zastepowany { get => kurs_zastepowany; set => kurs_zastepowany = value; }
+    public Kurs Kurs_zastepujacy { get => kurs_zastepujacy; set => kurs_zastepujacy = value; }
+    public Status_propozycji Status { get => status; set => status = value; }
+    public string Komentarz_Opiniodawcy { get => komentarz_Opiniodawcy; set => komentarz_Opiniodawcy = value; }
+    
+    
     //private Opiniodawca rozpatruje2;
 
 }
