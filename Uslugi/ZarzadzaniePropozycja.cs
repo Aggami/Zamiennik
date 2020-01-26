@@ -10,7 +10,8 @@ namespace Uslugi
     public class ZarzadzaniePropozycja
     {
         private static ZamiennikKontekst db = new ZamiennikKontekst();
-        private static Repozytorium<Propozycja_zamiennika> propozycjeRep = new Repozytorium<Propozycja_zamiennika>(db);
+        //private static Repozytorium<Propozycja_zamiennika> propozycjeRep = new Repozytorium<Propozycja_zamiennika>(db);
+        private static RepozytoriumPropozycja propozycjeRep = new RepozytoriumPropozycja(db);
 
         public static void zaakceptujPropozycje(Propozycja_zamiennika propozycja, string komentarz)
         {

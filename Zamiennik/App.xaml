@@ -41,6 +41,48 @@
             </Setter>
         </Style>
 
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="SelectionMode" Value="Single"></Setter>
+            <Setter Property="AlternatingRowBackground" Value="#EEF8ED"></Setter>
+            <Setter Property="FrozenColumnCount" Value="2"></Setter>
+            <Setter Property="CanUserAddRows" Value="False"></Setter>
+            <Setter Property="CanUserDeleteRows" Value="False"></Setter>
+            <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#4c4c47"/>
+            <Setter Property="ColumnWidth" Value="*"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+        </Style>
+
+        <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}"  >
+            <Setter Property="Background" Value="#2A6E19" />
+            <Setter Property="Foreground" Value="#BFFFDE" />
+            <Setter Property="Padding" Value="4"/>
+            <Style.Triggers>
+                <Trigger Property="SortDirection" Value="{x:Null}">
+                    <Setter Property="Background" Value="#2A6E19" />
+                    <Setter Property="BorderBrush"  Value="Transparent" />
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="SortDirection" Value="{x:Null}" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#2A6E19" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                </MultiTrigger>
+
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="true" />
+                        <Condition Property="SortDirection" Value="{x:Null}" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#2A6E19" />
+                    <Setter Property="BorderBrush" Value="#2A6E19" />
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+
         <Style TargetType="{x:Type Label}" x:Key="header">
             <Setter Property="FontFamily" Value="Segoe UI Light"></Setter>
             <Setter Property="FontSize" Value="18"></Setter>
