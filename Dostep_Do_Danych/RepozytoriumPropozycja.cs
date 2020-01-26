@@ -14,7 +14,7 @@ namespace Dostep_Do_Danych
         {
         }
 
-        public List<Propozycja_zamiennika> ZnajdzPoPredykacie(Expression<Func<Propozycja_zamiennika, bool>> predykat)
+        public new List<Propozycja_zamiennika> ZnajdzPoPredykacie(Expression<Func<Propozycja_zamiennika, bool>> predykat)
         {
             return zbior.Where(predykat).Include(p => p.Kurs_zastepowany).Include("Kurs_zastepujacy.Efekty")
                 .ToList<Propozycja_zamiennika>();

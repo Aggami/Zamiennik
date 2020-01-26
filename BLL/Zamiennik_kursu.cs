@@ -40,10 +40,107 @@ public class Zamiennik_kursu {
     public Kurs Kurs_zastepowany { get => kurs_zastepowany; set => kurs_zastepowany = value; }
     public List<Kurs> Kursy_skladowe { get => kursy_skladowe; set => kursy_skladowe = value; }
 
-    public int Punkty_ECTS { get => punkty_ECTS; }
-    public bool Czy_Egzamin { get => czy_Egzamin; }
+    //public int Punkty_ECTS { get => punkty_ECTS; }
+    //public bool Czy_Egzamin { get => czy_Egzamin; }
     public Poziom_ksztalcenia Poziom_ksztalcenia { get => poziom_ksztalcenia; }
     public bool Czy_studia_stacjonarne { get => czy_studia_stacjonarne; }
     public bool Czy_aktywny { get => czy_aktywny; }
     public Typ_semestru Typ_semestru { get => typ_semestru;  }
+
+    [NotMapped]
+    public string Kod_kursu
+    {
+        get
+        {
+            string s="";
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s+=k.Kod_kursu+"\n";
+            }
+            return s;
+        }
+    }
+
+    [NotMapped]
+    public string Nazwa_kursu
+    {
+        get
+        {
+            string s = "";
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s += k.Nazwa_kursu + "\n";
+            }
+            return s;
+        }
+    }
+
+    public string Forma_kursu
+    {
+        get
+        {
+            string s = "";
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s += k.Forma_kursu + "\n";
+            }
+            return s;
+        }
+    }
+
+    public string Czy_egzamin
+    {
+        get
+        {
+            string s = "Kurs zakoñczony zaliczeniem.";
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                if (k.Czy_egzamin) s = "Kurs zakoñczony egzaminem. ";
+            }
+            return s;
+        }
+    }
+
+    public string Wydzial
+    {
+        get
+        {
+            string s = "";
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s += k.Plan_studiow.Kierunek.Wydzial.Numer_wydzialu + "\n";
+            }
+            return s;
+        }
+    }
+
+    public string Kierunek
+    {
+        get
+        {
+            string s = "";
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s += k.Plan_studiow.Kierunek.Nazwa + "\n";
+            }
+            return s;
+        }
+    }
+
+    [NotMapped]
+    public string Punkty_ECTS
+    {
+        get
+        {
+            string s = "";
+            int suma = 0;
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s += k.Punkty_ECTS + " +";
+                suma += k.Punkty_ECTS;
+            }
+            s += " = " + suma;
+            return s;
+        }
+    }
 }

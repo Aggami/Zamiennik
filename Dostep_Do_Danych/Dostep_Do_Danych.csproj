@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repozytorium.cs" />
+    <Compile Include="RepozytoriumKurs.cs" />
     <Compile Include="RepozytoriumPropozycja.cs" />
     <Compile Include="ZamiennikKontekst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

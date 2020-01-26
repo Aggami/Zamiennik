@@ -11,7 +11,7 @@ namespace Uslugi
     public class Wyszukiwarka
     {
         private static ZamiennikKontekst db = new ZamiennikKontekst();
-        private static Repozytorium<Kurs> kursy = new Repozytorium<Kurs>(db);
+        private static RepozytoriumKurs kursy = new RepozytoriumKurs(db);
         private static Repozytorium<Zamiennik_kursu> zamienniki = new Repozytorium<Zamiennik_kursu>(db);
 
         public static List<Kurs> ZnajdzKurs(string fraza)

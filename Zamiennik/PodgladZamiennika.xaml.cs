@@ -19,9 +19,19 @@ namespace Zamiennik
     /// </summary>
     public partial class PodgladZamiennika : Window
     {
-        public PodgladZamiennika()
+        Zamiennik_kursu zamiennik;
+
+        public PodgladZamiennika(Zamiennik_kursu zamiennik)
         {
             InitializeComponent();
+            this.zamiennik = zamiennik;
+            nazwa.Content = zamiennik.Nazwa_kursu;
+            kod.Content = zamiennik.Kod_kursu;
+            typ.Content = zamiennik.Forma_kursu;
+            ects.Content = zamiennik.Punkty_ECTS;
+            czyegzamin.Content = zamiennik.Czy_egzamin;
+
+
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

@@ -80,7 +80,9 @@ namespace Zamiennik
 
         private void Zamienniki_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            var zamiennik = Zamienniki.SelectedItem as Zamiennik_kursu;
+            PodgladZamiennika podglad = new PodgladZamiennika(zamiennik);
+            podglad.ShowDialog();
         }
     }
 }
