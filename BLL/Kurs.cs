@@ -68,8 +68,19 @@ public class Kurs {
 
     public List<Efekt_ksztalcenia> Efekty { get => efekty; set => efekty = value; }
     public List<Zamiennik_kursu> Zamienniki { get => zamienniki; set => zamienniki = value; }
-    public Plan_studiow Plan_studiow { get => plan_studiow; set => plan_studiow = value; }
+    virtual public Plan_studiow Plan_studiow { get => plan_studiow; set => plan_studiow = value; }
 
     //private Opiniodawca opiekun;
+
+    public string EfektyToString()
+    {
+        string s = "";
+        foreach (Efekt_ksztalcenia efekt in Efekty)
+        {
+            s += efekt.Symbol_efektu_ksztalcenia + " " + efekt.Nazwa + "/n";
+        }
+        return s;
+    }
+    
 
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
         Closing="Window_Closing"
-        Title="Rozpatrz propozycję zamiennika" Height="600" Width="800" Background="#FEFFFD"
+        Title="Rozpatrz propozycję zamiennika" Height="600" Width="850" Background="#FEFFFD"
         Style="{StaticResource CustomWindowStyle}">
 
     <Window.Resources>
@@ -41,7 +41,7 @@
     </Window.Resources>
     <StackPanel VerticalAlignment="Stretch" Orientation="Vertical" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-            <StackPanel Style="{StaticResource Courses}"  HorizontalAlignment="Left"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" CanVerticallyScroll="True" IsManipulationEnabled="True" >
+            <StackPanel Style="{StaticResource Courses}"  HorizontalAlignment="Left" Width="400" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" CanVerticallyScroll="True" IsManipulationEnabled="True" >
                 <Label Content="Kurs zastępowany: " FontFamily="Segoe UI Light" ></Label>
                 <Label Background="#2A6E19" Foreground="#F5FFF8" x:Name="k1Nazwa">Tytul 1</Label>
                 <Label x:Name="k1Typ" Content="Typ zajęć: "></Label>
@@ -49,10 +49,10 @@
                 <Label Content="Plan studiow: "></Label>
                 <TextBlock x:Name="k1Plan" >Plan studiow</TextBlock>
                 <Label   Content="Kierunkowe efekty kształcenia: "></Label>
-                <TextBlock x:Name="k1Efekty" >Kierunkowe efekty ksztalcenia:</TextBlock>
+                <TextBlock x:Name="k1Efekty" FontSize="13" Width="400" TextAlignment="Left" TextWrapping="Wrap" >Kierunkowe efekty ksztalcenia:</TextBlock>
     
             </StackPanel>
-            <StackPanel Style="{StaticResource Courses}">
+            <StackPanel Style="{StaticResource Courses}" Width="400">
                 <Label Content="Kurs zastępowany: " FontFamily="Segoe UI Light" ></Label>
                 <Label Background="#2A6E19" Foreground="#F5FFF8" x:Name="k2Nazwa">Tytul 1</Label>
                 <Label x:Name="k2Typ" Content="Typ zajęć: "></Label>
@@ -60,7 +60,7 @@
                 <Label Content="Plan studiow: "></Label>
                 <TextBlock x:Name="k2Plan" >Plan studiow</TextBlock>
                 <Label   Content="Kierunkowe efekty kształcenia: "></Label>
-                <TextBlock x:Name="k2Efekty" >Kierunkowe efekty ksztalcenia:</TextBlock>
+                <TextBlock x:Name="k2Efekty" FontSize="13" Width="400" TextAlignment="Left" TextWrapping="Wrap" >Kierunkowe efekty ksztalcenia:</TextBlock>
             </StackPanel>
         </StackPanel>
 

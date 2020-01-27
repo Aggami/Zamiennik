@@ -55,7 +55,7 @@ public class Zamiennik_kursu {
             string s="";
             foreach (Kurs k in Kursy_skladowe)
             {
-                s+=k.Kod_kursu+"\n";
+                s+=k.Kod_kursu+",  ";
             }
             s = s.Trim();
             return s;
@@ -70,7 +70,8 @@ public class Zamiennik_kursu {
             string s = "";
             foreach (Kurs k in Kursy_skladowe)
             {
-                s += k.Nazwa_kursu + "\n";
+                if (s.Contains(k.Nazwa_kursu)) continue;
+                s += k.Nazwa_kursu + "+ ";
             }
             s = s.Trim();
             return s;
@@ -150,4 +151,24 @@ public class Zamiennik_kursu {
             return s;
         }
     }
+
+    [NotMapped]
+    public string ZZU
+    {
+        get
+        {
+            string s = "";
+            int suma = 0;
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s += k.ZZU + " +";
+                suma += k.ZZU;
+            }
+            s = s.Remove(s.Length - 2);
+            s += " = " + suma;
+            return s;
+        }
+    }
+
+
 }

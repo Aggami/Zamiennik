@@ -37,4 +37,16 @@ public class Plan_studiow {
     public int Czas_trwania { get => czas_trwania; set => czas_trwania = value; }
     //private Student student;
 
+    override public string ToString()
+    {
+        string s = "W" + kierunek.Wydzial.Numer_wydzialu + ", " + kierunek.Nazwa + ", ";
+        string spom = "";
+        foreach (Rok_akademicki r in lata)
+        {
+            spom += s+r.Nazwa + "\n";
+        }
+        spom = spom.Trim();
+        return spom;
+        
+    }
 }

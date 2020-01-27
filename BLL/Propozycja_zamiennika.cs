@@ -34,4 +34,16 @@ public class Propozycja_zamiennika {
     
     //private Opiniodawca rozpatruje2;
 
+    public void zaakceptujPropozycje(string komentarz)
+    {
+        this.Status = Status_propozycji.Zweryfikowana;
+        this.komentarz_Opiniodawcy = komentarz;
+    }
+
+    public void odrzucPropozycje(string komentarz)
+    {
+        this.Status = Status_propozycji.Odrzucona;
+        this.komentarz_Opiniodawcy = komentarz;
+    }
+
 }

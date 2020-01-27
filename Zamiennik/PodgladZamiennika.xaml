@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
-        Title="Podgląd zamiennika" Height="450" Width="400">
+        Title="Podgląd zamiennika" Height="450" Width="400"
+        SizeToContent="Height">
     <Window.Resources>
 
         <Style TargetType="{x:Type Label}">
@@ -23,6 +24,13 @@
         <Label x:Name="czyegzamin" Content="Kurs zakończony egzaminem."></Label>
         <Label x:Name="zzu" Content="Liczba godzin zajęć"></Label>
         <Label x:Name="plan" Content="Plan studiów"></Label>
+        <TextBlock x:Name="nazwa2" Visibility="Collapsed" Text="Nazwa Kursu" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource headerblock}" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+        <Label x:Name="kod2" Visibility="Collapsed" Content="Kod kursu"></Label>
+        <Label x:Name="typ2" Visibility="Collapsed" Content="Typ"></Label>
+        <Label x:Name="ects2" Content="ECTS"></Label>
+        <Label x:Name="czyegzamin2" Visibility="Collapsed" Content="Kurs zakończony egzaminem."></Label>
+        <Label x:Name="zzu2" Visibility="Collapsed" Content="Liczba godzin zajęć"></Label>
+        <Label x:Name="plan2" Visibility="Collapsed" Content="Plan studiów"></Label>
         <Button Width ="70" HorizontalAlignment="Right" Style="{StaticResource decisionButtons}"  Margin="10,10,40,10" Content="Zamknij" Click="CloseButton_Click"></Button>
 
     </StackPanel>

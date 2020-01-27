@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
-        Title="Wyszukaj istniejące zamienniki" Height="700" Width="1000"
+        Title="Wyszukaj istniejące zamienniki" Height="1000" Width="1400"
         Style="{StaticResource CustomWindowStyle}">
 
     <Window.Resources>
@@ -61,8 +61,8 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" MinWidth="25"></ColumnDefinition>
-            <ColumnDefinition Width="2*" MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition Width="2*" MinWidth="380"></ColumnDefinition>
+            <ColumnDefinition Width="3*" MinWidth="600"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0" Background="#EEF8ED" >
             <StackPanel x:Name="details" DockPanel.Dock ="Top" Visibility="Hidden" Margin="10, 5,5,5">

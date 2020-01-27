@@ -25,12 +25,29 @@ namespace Zamiennik
         {
             InitializeComponent();
             this.zamiennik = zamiennik;
-            nazwa.Text = zamiennik.Nazwa_kursu;
-            kod.Content = zamiennik.Kod_kursu;
-            typ.Content = zamiennik.Forma_kursu;
-            ects.Content = zamiennik.Punkty_ECTS;
-            czyegzamin.Content = zamiennik.Czy_egzamin;
+            nazwa.Text = zamiennik.Kursy_skladowe[0].Nazwa_kursu;
+            kod.Content = "Kod(y) kursu(ów): "+ zamiennik.Kursy_skladowe[0].Kod_kursu;
+            typ.Content = "Forma zajęć: "+ zamiennik.Kursy_skladowe[0].Forma_kursu;
+            ects.Content = "Punkty ECTS: "+ zamiennik.Kursy_skladowe[0].Punkty_ECTS;
+            czyegzamin.Content = zamiennik.Kursy_skladowe[0].Czy_egzamin;
+            plan.Content = "Plan studiow: \n"+ zamiennik.Kursy_skladowe[0].Plan_studiow;
 
+            if (zamiennik.Kursy_skladowe.Count > 1)
+            {
+                
+                nazwa2.Text = zamiennik.Kursy_skladowe[1].Nazwa_kursu;
+                kod2.Content = "Kod(y) kursu(ów): " + zamiennik.Kursy_skladowe[1].Kod_kursu;
+                typ2.Content = "Forma zajęć: " + zamiennik.Kursy_skladowe[1].Forma_kursu;
+                ects2.Content = "Punkty ECTS: " + zamiennik.Kursy_skladowe[1].Punkty_ECTS;
+                czyegzamin2.Content = zamiennik.Kursy_skladowe[1].Czy_egzamin;
+                plan2.Content = "Plan studiow: \n" + zamiennik.Kursy_skladowe[1].Plan_studiow;
+                nazwa2.Visibility = Visibility.Visible;
+                kod2.Visibility = Visibility.Visible;
+                typ2.Visibility = Visibility.Visible;
+                ects2.Visibility = Visibility.Visible;
+                czyegzamin2.Visibility = Visibility.Visible;
+                plan2.Visibility = Visibility.Visible;
+            }
 
         }
 

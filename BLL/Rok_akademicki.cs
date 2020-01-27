@@ -25,5 +25,14 @@ public class Rok_akademicki {
     public DateTime Data_rozpoczecia { get => data_rozpoczecia; set => data_rozpoczecia = value; }
     public DateTime Data_zakonczenia { get => data_zakonczenia; set => data_zakonczenia = value; }
    
+
+    public string Nazwa
+    {
+        get
+        {
+            return this.Data_rozpoczecia.Year + "/" + this.Data_zakonczenia.Year;
+        }
+
+    }
 }
 

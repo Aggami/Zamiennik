@@ -15,8 +15,7 @@ namespace Uslugi
 
         public static void zaakceptujPropozycje(Propozycja_zamiennika propozycja, string komentarz)
         {
-            propozycja.Komentarz_Opiniodawcy = komentarz;
-            propozycja.Status = Status_propozycji.Zweryfikowana;
+            propozycja.zaakceptujPropozycje(komentarz);
             propozycjeRep.Edytuj(propozycja);
             db.SaveChanges();
 
@@ -24,8 +23,7 @@ namespace Uslugi
 
         public static void odrzucPropozycje(Propozycja_zamiennika propozycja, string komentarz)
         {
-            propozycja.Komentarz_Opiniodawcy = komentarz;
-            propozycja.Status = Status_propozycji.Odrzucona;
+            propozycja.odrzucPropozycje(komentarz);
             propozycjeRep.Edytuj(propozycja);
             db.SaveChanges();
         }
@@ -34,6 +32,8 @@ namespace Uslugi
         {
             return propozycjeRep.ZnajdzPoPredykacie(p => p.Status == Status_propozycji.Zgloszona);
         }
+
+        
 
     }
 }
