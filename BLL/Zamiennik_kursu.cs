@@ -57,6 +57,7 @@ public class Zamiennik_kursu {
             {
                 s+=k.Kod_kursu+"\n";
             }
+            s = s.Trim();
             return s;
         }
     }
@@ -71,6 +72,7 @@ public class Zamiennik_kursu {
             {
                 s += k.Nazwa_kursu + "\n";
             }
+            s = s.Trim();
             return s;
         }
     }
@@ -84,6 +86,7 @@ public class Zamiennik_kursu {
             {
                 s += k.Forma_kursu + "\n";
             }
+            s = s.Trim();
             return s;
         }
     }
@@ -97,6 +100,7 @@ public class Zamiennik_kursu {
             {
                 if (k.Czy_egzamin) s = "Kurs zakoñczony egzaminem. ";
             }
+            s = s.Trim();
             return s;
         }
     }
@@ -110,6 +114,7 @@ public class Zamiennik_kursu {
             {
                 s += k.Plan_studiow.Kierunek.Wydzial.Numer_wydzialu + "\n";
             }
+            s = s.Trim();
             return s;
         }
     }
@@ -123,6 +128,7 @@ public class Zamiennik_kursu {
             {
                 s += k.Plan_studiow.Kierunek.Nazwa + "\n";
             }
+            s = s.Trim();
             return s;
         }
     }
@@ -139,6 +145,7 @@ public class Zamiennik_kursu {
                 s += k.Punkty_ECTS + " +";
                 suma += k.Punkty_ECTS;
             }
+            s = s.Remove(s.Length - 2);
             s += " = " + suma;
             return s;
         }

@@ -25,6 +25,7 @@ namespace Zamiennik
         public MainWindow()
         {
             InitializeComponent();
+            //Komunikat.Show(b.ToString());
             
         }
 

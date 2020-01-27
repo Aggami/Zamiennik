@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
-        Title="Podgląd zamiennika" Height="300" Width="400">
+        Title="Podgląd zamiennika" Height="450" Width="400">
+    <Window.Resources>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#231F20"></Setter>
+            <Setter Property="FontWeight" Value="Light"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        </Style>
+    </Window.Resources>
+    
     <StackPanel>
-        <Label x:Name="nazwa" Content="Nazwa Kursu"></Label>
+        <TextBlock x:Name="nazwa" Text="Nazwa Kursu" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource headerblock}" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
         <Label x:Name="kod" Content="Kod kursu"></Label>
         <Label x:Name="typ" Content="Typ"></Label>
         <Label x:Name="ects" Content="ECTS"></Label>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
-        Title="Wyszukaj istniejące zamienniki" Height="450" Width="800"
+        Title="Wyszukaj istniejące zamienniki" Height="700" Width="1000"
         Style="{StaticResource CustomWindowStyle}">
 
     <Window.Resources>

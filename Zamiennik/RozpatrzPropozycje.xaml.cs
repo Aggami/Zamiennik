@@ -50,6 +50,38 @@ namespace Zamiennik
 
         }
 
+        private void Pokaz_karty_Przedmiotow_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string sciezka1=null;
+            string sciezka2=null;
+            if (!(propozycja.Kurs_zastepowany.Karta_przedmiotu == null))
+            {
+                sciezka1 = ObslugaPDF.zapisPdfDoSciezki(propozycja.Kurs_zastepowany);
+            }
+            else Komunikat.Show("Brak karty przedmiotu kursu zastępowanego.");
+            if (!(propozycja.Kurs_zastepujacy.Karta_przedmiotu == null))
+            {
+                sciezka2 = ObslugaPDF.zapisPdfDoSciezki(propozycja.Kurs_zastepujacy);
+            }
+            else Komunikat.Show("Brak karty przedmiotu kursu zastępującego.");
+            if ((sciezka1 != null) && (sciezka2 != null))
+            {
+                PodgladPDF podglad = new PodgladPDF(sciezka1, sciezka2);
+                podglad.ShowDialog();
+                return;
+            }
+            if ((sciezka1 != null) )
+            {
+                PodgladPDF podglad = new PodgladPDF(sciezka1);
+                podglad.ShowDialog();
+            }
+            if ((sciezka2 != null))
+            {
+                PodgladPDF podglad = new PodgladPDF(sciezka2);
+                podglad.ShowDialog();
+            }
+        }
+
         private void Reject_Button_Click(object sender, RoutedEventArgs e)
         {
             if (check_if_comment() == false)

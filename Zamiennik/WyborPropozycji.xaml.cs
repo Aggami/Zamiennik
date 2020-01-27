@@ -29,5 +29,12 @@ namespace Zamiennik
             propozycje = new ObservableCollection<Propozycja_zamiennika>(ZarzadzaniePropozycja.znajdzDostepnePropozycje());
             Propozycje.ItemsSource = propozycje;
         }
+
+        private void Propozycje_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var propozycja = Propozycje.SelectedItem as Propozycja_zamiennika;
+            RozpatrzPropozycje podglad = new RozpatrzPropozycje(propozycja);
+            podglad.ShowDialog();
+        }
     }
 }

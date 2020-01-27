@@ -25,7 +25,7 @@ namespace Zamiennik
         {
             InitializeComponent();
             this.zamiennik = zamiennik;
-            nazwa.Content = zamiennik.Nazwa_kursu;
+            nazwa.Text = zamiennik.Nazwa_kursu;
             kod.Content = zamiennik.Kod_kursu;
             typ.Content = zamiennik.Forma_kursu;
             ects.Content = zamiennik.Punkty_ECTS;
