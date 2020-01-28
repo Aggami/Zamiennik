@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 public class Grupa_kursow : Kurs  {
     private int grupa_kursow_id;
@@ -23,8 +24,10 @@ public class Grupa_kursow : Kurs  {
             this.Typ_semestru = k.Typ_semestru;
             this.Semestr = k.Semestr;
             this.Plan_studiow = k.Plan_studiow;
-            this.Efekty.AddRange(k.Efekty);
+            if (k.Efekty!=null) this.Efekty.AddRange(k.Efekty);
         }
+        //usuniêcie powtarzaj¹cych siê elementów:
+        this.Efekty = this.Efekty.Distinct().ToList();
     }
 
     [Key]

@@ -19,7 +19,7 @@ public class Zamiennik_kursu {
     {
     }
 
-    //uwaga: dodaæ panowanie nad derived
+
     public Zamiennik_kursu(Kurs kurs, List<Kurs> kursy_skladowe)
     {
         this.kurs_zastepowany = kurs;

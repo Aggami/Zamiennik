@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
         Closing="Window_Closing"
-        Title="Rozpatrz propozycję zamiennika" Height="600" Width="850" Background="#FEFFFD"
+        SizeToContent="Height"
+        Title="Rozpatrz propozycję zamiennika" Height="700" Width="850" Background="#FEFFFD"
         Style="{StaticResource CustomWindowStyle}">
 
     <Window.Resources>
@@ -64,13 +65,13 @@
             </StackPanel>
         </StackPanel>
 
-            <Button Style ="{StaticResource decisionButtons}" Content="Obejrzyj karty przedmiotow" Width="300" Click="Pokaz_karty_Przedmiotow_Button_Click"></Button>
+            <Button x:Name="pokazKartyPrzedm" Style ="{StaticResource decisionButtons}" Content="Obejrzyj karty przedmiotow" Width="300" Click="Pokaz_karty_Przedmiotow_Button_Click"></Button>
 
 
         <Label Content="Wpisz komentarz:" Foreground="#231F20" HorizontalAlignment="Left" FontFamily="Segoe UI Light" FontWeight="Bold" Margin="10, 0, 0 0" FontSize="18" />
         <TextBox Height="60" Margin="10, 10, 10, 10" x:Name="komentarz"></TextBox>
         <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0"  Content="Akceptuj" Click="Accept_Button_Click"></Button>
+            <Button x:Name="zaakceptuj" Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0"  Content="Akceptuj" Click="Accept_Button_Click"></Button>
             <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0" Content="Odrzuć" Click="Reject_Button_Click"></Button>
             <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0" Content="Rozpatrz później" Click="Cancel_Button_Click"></Button>
 

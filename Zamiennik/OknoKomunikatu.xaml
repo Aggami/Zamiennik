@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Zamiennik"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="Potwierdzenie"  Height="150" Width="250">
+        Title="Komunikat"  Height="150" Width="250">
     <StackPanel Grid.ColumnSpan="2" Margin="2,2,1.6,2.4">
         <TextBlock x:Name="komunikat" FontSize="12" Margin="10" HorizontalAlignment="Center" Text="Czy na pewno?" ></TextBlock>
         <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">

@@ -8,7 +8,7 @@ namespace Uslugi
 {
     public class Slownik
     {
-        public string Forma_Kursu (Forma_kursu forma)
+        public static string Forma_Kursu (Forma_kursu forma)
         {
             switch (forma){
                 case Forma_kursu.CwiczeniaLaboratorium:
@@ -30,7 +30,7 @@ namespace Uslugi
             }
         }
 
-        public string Typ_semestru(Typ_semestru typ)
+        public static string Typ_semestru(Typ_semestru typ)
         {
             if (typ == global::Typ_semestru.Semestr_letni) return "Semestr letni";
             else return "Semestr zimowy";

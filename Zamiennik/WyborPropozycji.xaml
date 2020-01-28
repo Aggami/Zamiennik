@@ -8,7 +8,7 @@
         Title="WyborPropozycji" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <TextBlock Text="Wybierz propozycję do rozpatrzenia: " HorizontalAlignment="Center" Margin="10"></TextBlock>
+            <TextBlock Text="Wybierz propozycję do rozpatrzenia: " HorizontalAlignment="Center" Margin="10" Style="{StaticResource headerblock}"></TextBlock>
             <DataGrid x:Name="Propozycje" HorizontalAlignment="Center" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" MouseUp="Propozycje_MouseUp">
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Id Propozycji" Binding="{Binding Path=Propozycja_zamiennika_id}" ></DataGridTextColumn>
