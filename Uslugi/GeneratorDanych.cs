@@ -8,7 +8,9 @@ using Dostep_Do_Danych;
 
 namespace Uslugi
 {
-    //klasa wykorzystywana do wprowadzenia testowych danych do bazy 
+    /// <summary>
+    /// Klasa służąca wprowadzeniu danych testowych do bazy
+    /// </summary>
     public class GeneratorDanych
     {
         static DbContext db = new ZamiennikKontekst();
@@ -22,15 +24,9 @@ namespace Uslugi
         static Repozytorium<Propozycja_zamiennika> propozycjeRep = new Repozytorium<Propozycja_zamiennika>(db);
 
 
-        public static void DodajKursy()
-        {
-
-        }
-
-        public static void DodajZamienniki(Kurs kurs)
-        {
-        }
-
+        /// <summary>
+        /// Skrypt dodający dane początkowe, testowe do bazy.
+        /// </summary>
         public static void DodajPierwszeDane()
         {
             Wydzial w1 = new Wydzial("1", "Wydział Architektury");
@@ -169,7 +165,35 @@ namespace Uslugi
         }
 
 
+        public static void dodajKartyPrzedmiotow()
+        {
+            string sciezka = @"C:\Users\aggam\Documents\szkoła\STUDIA\ilovepdf_split-range\opis15.pdf";
+            Kurs k = kursyRep.ZnajdzPoId("INP002263Wcl");
+            ObslugaPDF.zapisDoKursu(sciezka, k);
+            sciezka = @"C:\Users\aggam\Documents\szkoła\STUDIA\ilovepdf_split-range\matdys.pdf";
+            k = kursyRep.ZnajdzPoId("INP002263Wc");
+            ObslugaPDF.zapisDoKursu(sciezka, k);
+            sciezka = @"C:\Users\aggam\Documents\szkoła\STUDIA\ilovepdf_split-range\jezipar.pdf";
+            k = kursyRep.ZnajdzPoId("INP002215Wl");
+            ObslugaPDF.zapisDoKursu(sciezka, k);
+
+            db.SaveChanges();
+
+        }
         
+        public static void DodajKursy()
+        {
+            Plan_studiow plW8Inf16 = planyRep.ZnajdzPoId(10);
+            Efekt_ksztalcenia W8Inf15w3 = new Efekt_ksztalcenia("K1INF_W03", plW8Inf16, "Ma podstawową wiedzę w zakresie mechaniki klasycznej; ruchu falowego; termodynamikifenomenologicznej; fizyki: kwantowej, jądra atomu; astrofizyki", Typ_efektu_ksztalcenia.Wiedza);
+            Efekt_ksztalcenia W8Inf15w4 = efektyRep.ZnajdzPoId(66);
+            Efekt_ksztalcenia W8Inf15u1 = efektyRep.ZnajdzPoId(69);
+
+
+            Kurs w8inf15LogikaW = new Kurs("INZ1519L", "Podstawy programowania", 2, true, Forma_kursu.Wyklad, null, 30, Typ_semestru.Semestr_zimowy, 1, new List<Efekt_ksztalcenia> { W8Inf15w4, W8Inf15u1 }, new List<Zamiennik_kursu>(), plW8Inf16, true);
+
+
+
+        }
 
 
 

@@ -31,6 +31,7 @@ namespace Zamiennik
             InitializeComponent();
             PrzegladarkaPdf1.PdfPath = sciezka1;
             PrzegladarkaPdf2.Visibility = Visibility.Collapsed;
+            this.Width = this.Width / 2;
         }
     }
 }

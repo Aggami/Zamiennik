@@ -17,7 +17,9 @@ namespace Dostep_Do_Danych
 
         public new List<Kurs> ZnajdzPoPredykacie(Expression<Func<Kurs, bool>> predykat)
         {
-            return zbior.Where(predykat).Include(p => p.Plan_studiow).Include(p => p.Zamienniki.Select(z => z.Kursy_skladowe.Select(k=>k.Plan_studiow.Select(pl=>pl.Lata))))
+            return zbior.Where(predykat).Include(p => p.Plan_studiow.Kierunek.Wydzial)
+                .Include(p => p.Zamienniki.Select(z => z.Kursy_skladowe.Select(k=>k.Plan_studiow.Lata)))
+                .Include(p => p.Zamienniki.Select(z => z.Kursy_skladowe.Select(k => k.Plan_studiow.Kierunek.Wydzial)))
                 .ToList<Kurs>();
         }
     }

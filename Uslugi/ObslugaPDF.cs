@@ -12,6 +12,7 @@ namespace Uslugi
     {
         static ZamiennikKontekst db = new ZamiennikKontekst();
         static RepozytoriumKurs kursyRep = new RepozytoriumKurs(db);
+        static int temp = 1;
 
         public static byte[] konwersjaNaByte(string sciezka)
         {
@@ -28,18 +29,18 @@ namespace Uslugi
 
         }
 
-        public static void zapisDoBD(string sciezka, Kurs kurs)
+        public static void zapisDoKursu(string sciezka, Kurs kurs)
         {
             byte[] plik = konwersjaNaByte(sciezka);
             kurs.Karta_przedmiotu = plik;
-            kursyRep.Edytuj(kurs);
-            db.SaveChanges();
+
         }
 
         public static string zapisPdfDoSciezki(Kurs kurs)
         {
             
-            string nowaSciezka = System.IO.Directory.GetCurrentDirectory() + @"\temp.pdf";
+            string nowaSciezka = System.IO.Directory.GetCurrentDirectory() + @"\temp"+temp%4+".pdf";
+            temp++;
             System.IO.File.WriteAllBytes(nowaSciezka, kurs.Karta_przedmiotu);
             return nowaSciezka;
         }

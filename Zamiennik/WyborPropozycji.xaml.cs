@@ -35,6 +35,7 @@ namespace Zamiennik
             var propozycja = Propozycje.SelectedItem as Propozycja_zamiennika;
             RozpatrzPropozycje podglad = new RozpatrzPropozycje(propozycja);
             podglad.ShowDialog();
+            propozycje= new ObservableCollection<Propozycja_zamiennika>(ZarzadzaniePropozycja.znajdzDostepnePropozycje());
         }
     }
 }

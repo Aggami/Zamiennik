@@ -39,15 +39,11 @@ namespace Dostep_Do_Danych
             return zbior;
         }
 
-        public void Edytuj(T obj)
-        {
-            var rekord =zbior.Find(obj);
-            if (rekord == null)
-            {
-                return;
-            }
-            zbior.Attach(obj);
+        
 
+        public T ZnajdzPoId(object id)
+        {
+            return zbior.Find(id);
         }
 
         public List<T>ZnajdzPoPredykacie(Expression<Func<T, bool>> predykat)

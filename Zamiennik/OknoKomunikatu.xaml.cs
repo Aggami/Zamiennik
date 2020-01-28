@@ -15,17 +15,17 @@ using System.Windows.Shapes;
 namespace Zamiennik
 {
     /// <summary>
-    /// Logika interakcji dla klasy MyMessageBox.xaml
+    /// Logika interakcji dla klasy OknoKomunikatu
     /// </summary>
     public partial class OknoKomunikatu : Window
     {
         public MessageBoxResult result;
 
-        public OknoKomunikatu()
-        {
-            InitializeComponent();
-        }
-
+        /// <summary>
+        /// Konstruktor zwracający okno komunikatu z różnymi opcjami przycisków
+        /// </summary>
+        /// <param name="komunikat">Treść komunikatu</param>
+        /// <param name="przyciski">Rodzaj przycisków</param>
         public OknoKomunikatu(string komunikat, MessageBoxButton przyciski)
         {
             InitializeComponent();
@@ -48,6 +48,10 @@ namespace Zamiennik
 
         }
 
+        /// <summary>
+        /// Konstruktor zwracający okno komunikatu z przyciskiem Ok
+        /// </summary>
+        /// <param name="komunikat">treść komunikatu</param>
         public OknoKomunikatu(string komunikat)
         {
             InitializeComponent();
@@ -59,6 +63,7 @@ namespace Zamiennik
             
 
         }
+
 
         private void Yes_Click(object sender, RoutedEventArgs e)
         {

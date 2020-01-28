@@ -79,7 +79,7 @@ namespace Zamiennik
                         Source = bitmap,
                         HorizontalAlignment = HorizontalAlignment.Center,
                         Margin = new Thickness(0, 4, 0, 4),
-                        MaxWidth = 700
+                        MaxWidth = 650
                     };
                     items.Add(image);
                 }

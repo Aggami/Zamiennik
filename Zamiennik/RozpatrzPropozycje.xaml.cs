@@ -57,6 +57,7 @@ namespace Zamiennik
                 ZarzadzaniePropozycja.zaakceptujPropozycje(propozycja, komentarz.Text);
                 Komunikat.Show("Propozycja zaakceptowana");
                 DialogResult = false;
+                komentarz.Clear();
                 this.Hide();
 
 
@@ -111,6 +112,7 @@ namespace Zamiennik
                 ZarzadzaniePropozycja.odrzucPropozycje(propozycja, komentarz.Text);
                 Komunikat.Show("Propozycja odrzucona");
                 DialogResult = false;
+                komentarz.Clear();
                 this.Hide();
 
 
@@ -150,17 +152,19 @@ namespace Zamiennik
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                //odrzucPropozycje
-                Komunikat.Show("Anulowano");
-                DialogResult = false;
-                this.Hide();
+            if (komentarz.Text != "") {
+                MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    //odrzucPropozycje
+                    Komunikat.Show("Anulowano");
+                    DialogResult = false;
+                    this.Hide();
 
 
+                }
+                e.Cancel = true;
             }
-            e.Cancel = true;
         }
     }
 }

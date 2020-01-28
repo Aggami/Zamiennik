@@ -1,7 +1,8 @@
 Ro
 
 Model danych:
-Rozwi¹zanie wykorzystuje Entity Framework 6, podejœcie Code First, st¹d nie wykorzystuje 
+Rozwi¹zanie wykorzystuje Entity Framework 6, podejœcie Code First, st¹d diagram ERD nie by³ potrzebny.
+Diagram wygenerowany przez Entity Framework 6 i wyœwietlony dziêki Entity Framework Power Tools bêdzie za³¹czony do wys³anego rozwi¹zania.
 
 
 Generacja klas z diagramu:
@@ -10,11 +11,10 @@ Klasy logiki biznesowej zosta³y wygenerowane przez Visual Paradigm z diagramu kl
 Informacje
 
 
-
 Informacje o wzorcu projektowym:
 Wykorzystany zosta³ wzorzec Repozytorium, który u³atwia po³¹czenia z baz¹ danych. 
 Chocia¿ w standardowej jego wersji tworzy siê repozytoria dla ka¿dej relacji w bazie danych, 
-tutaj do wiêkszoœci klas zastosowa³am jego generyczn¹ postaæ. 
+tutaj do wiêkszoœci klas zastosowa³am jego generyczn¹ postaæ, na któr¹ pozwala C#. 
 Osobne repozytoria tworzy³am dla wykorzystywanych przeze mnie w przypadkach u¿ycia klas, 
 w szczególnoœci takich, które wymaga³y za³¹czenia(Include()) swoich potomków. 
 
@@ -24,3 +24,12 @@ Kontrolka u¿ytkownika "PDF Viewer" wykorzystana do wyœwietlania kart przedmiotu 
 a pobrana z GitHuba: https://github.com/LanderVe/WPF_PDFDocument
 Autor wyrazi³ na swoim blogu zgodê na jej wykorzystanie (https://blogs.u2u.be/lander/post/2018/01/23/Creating-a-PDF-Viewer-in-WPF-using-Windows-10-APIs).
 
+Logika biznesowa: 
+Z powodu zauwa¿onych ró¿nic w podejœciach do Grup Kursów na ró¿nych wydzia³ach 
+(jedne wydzia³y traktuj¹ Grupê Kursów w Planie Studiów jak jeden kurs 
+- nadaj¹ jeden kod kursu, wspólne efekty kszta³cenia, wspólne punkty ects i wspólne godziny zzu; 
+a inne wydzia³y nadaj¹ te cechy ka¿demu kursowi w grupie kursów z osobna)
+Aby da³o siê pogodziæ oba rozwi¹zania, przyjê³am, ¿e jeœli Grupa Kursów jest przez wydzia³ traktowana jak jeden przedmiot, tak te¿ bêdzie trakowana w aplikacji i zapisywana jako kurs z Form¹ Kursu np. WykladCwiczenia.
+Poniewa¿ jest tak na Wydziale Informatyki i Zarz¹dzania, to wiêkszoœæ grup kursów jest wpisana w ten sposób.
+
+Klasa "Grupa_kursow" jest wykorzystywana dla wydzia³ów takich jak Wydzia³ Elektroniki. 
