@@ -47,7 +47,7 @@ namespace Uslugi
         /// <summary>
         /// Metoda wyszukująca propozycje do rozpatrzenia.
         /// </summary>
-        /// <returns>Wszystkie propozycje o statusie Status_propozycji.Zgloszona</returns>
+        /// <returns>Wszystkie propozycje z bazy danych o statusie Status_propozycji.Zgloszona</returns>
         public static List<Propozycja_zamiennika> znajdzDostepnePropozycje()
         {
             return propozycjeRep.ZnajdzPoPredykacie(p => p.Status == Status_propozycji.Zgloszona);

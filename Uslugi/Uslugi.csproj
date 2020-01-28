@@ -52,6 +52,7 @@
     <Compile Include="GeneratorDanych.cs" />
     <Compile Include="ObslugaPDF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slownik.cs" />
     <Compile Include="Wyszukiwarka.cs" />
     <Compile Include="ZarzadzaniePropozycja.cs" />
   </ItemGroup>
