@@ -25,6 +25,7 @@ namespace Zamiennik
         public MainWindow()
         {
             InitializeComponent();
+            ZarzadzaniePropozycja.ustawPropozycjeJakoZgloszone();
             
             
         }

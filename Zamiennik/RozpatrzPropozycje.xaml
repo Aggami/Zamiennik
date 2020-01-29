@@ -72,7 +72,7 @@
         <TextBox Height="60" Margin="10, 10, 10, 10" x:Name="komentarz"></TextBox>
         <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="zaakceptuj" Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0"  Content="Akceptuj" Click="Accept_Button_Click"></Button>
-            <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0" Content="Odrzuć" Click="Reject_Button_Click"></Button>
+            <Button x:Name="odrzuc" Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0" Content="Odrzuć" Click="Reject_Button_Click"></Button>
             <Button Style ="{StaticResource decisionButtons}" Margin="10, 0, 10, 0" Content="Rozpatrz później" Click="Cancel_Button_Click"></Button>
 
     

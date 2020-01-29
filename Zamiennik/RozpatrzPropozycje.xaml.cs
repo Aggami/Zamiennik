@@ -152,7 +152,7 @@ namespace Zamiennik
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (komentarz.Text != "") {
+            if (komentarz.Text==null||komentarz.Text=="") {
                 MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {

@@ -53,6 +53,20 @@ namespace Uslugi
             return propozycjeRep.ZnajdzPoPredykacie(p => p.Status == Status_propozycji.Zgloszona);
         }
 
+        /// <summary>
+        /// Metoda do testów ustawiająca wszystkie propozycje jako zgłoszone 
+        /// 
+        /// </summary>
+       public static void ustawPropozycjeJakoZgloszone()
+        {
+            List<Propozycja_zamiennika> propozycje = propozycjeRep.ZnajdzWszystkie().ToList();
+            foreach (Propozycja_zamiennika p in propozycje)
+            {
+                p.Status = Status_propozycji.Zgloszona;
+                p.Komentarz_Opiniodawcy = "";
+            }
+            db.SaveChanges();
+        }
         
 
     }

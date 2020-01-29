@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Grupa_kursowTests.cs" />
-    <Compile Include="ObslugaPDFTests.cs" />
     <Compile Include="RozpatrzPropozycjeTestyAutomatyczne.cs" />
     <Compile Include="PropozycjaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

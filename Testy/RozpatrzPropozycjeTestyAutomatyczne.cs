@@ -50,29 +50,133 @@ namespace Testy
         {
             var applicationDirectory = TestContext.TestDeploymentDir;
             Application application = Application.Launch(zamiennikPath);
-            TestStack.White.UIItems.WindowItems.Window mainwindow = application.GetWindow("Menu");
-            mainwindow.WaitWhileBusy();
-            Button rozpProp = mainwindow.Get<Button>("propozycje");
-            rozpProp.Click();
-            mainwindow.WaitWhileBusy();
-            TestStack.White.UIItems.WindowItems.Window wyborPropozycji = application.GetWindow("WyborPropozycji");
-            ListView propozycje = wyborPropozycji.Get<ListView>("Propozycje");
-            propozycje.Rows[0].Click();
-            TestStack.White.UIItems.WindowItems.Window rozpatrzPropozycje = application.GetWindow("Rozpatrz propozycję zamiennika");
-            Button kartyPrzedm = rozpatrzPropozycje.Get<Button>("pokazKartyPrzedm");
-            kartyPrzedm.Click();
-            TestStack.White.UIItems.WindowItems.Window podgladPDF = application.GetWindow("PodgladPDF");
-            podgladPDF.Close();
-            TextBox komentarz = rozpatrzPropozycje.Get<TextBox>("komentarz");
-            komentarz.Text = "Dobra propozycja.";
-            Button zaakceptuj = rozpatrzPropozycje.Get<Button>("zaakceptuj");
-            zaakceptuj.Click();
-            TestStack.White.UIItems.WindowItems.Window potw = application.GetWindow("Komunikat");
-            Button yes = potw.Get<Button>("yesButton");
-            yes.Click();
-            wyborPropozycji.Close();
-            application.Close();
+            
+            try
+            {
+                
+                TestStack.White.UIItems.WindowItems.Window mainwindow = application.GetWindow("Menu");
+                mainwindow.WaitWhileBusy();
+                Button rozpProp = mainwindow.Get<Button>("propozycje");
+                rozpProp.Click();
+                mainwindow.WaitWhileBusy();
+                TestStack.White.UIItems.WindowItems.Window wyborPropozycji = application.GetWindow("WyborPropozycji");
+                ListView propozycje = wyborPropozycji.Get<ListView>("Propozycje");
 
+                propozycje.Rows[0].Click();
+                TestStack.White.UIItems.WindowItems.Window rozpatrzPropozycje = application.GetWindow("Rozpatrz propozycję zamiennika");
+                Button kartyPrzedm = rozpatrzPropozycje.Get<Button>("pokazKartyPrzedm");
+                kartyPrzedm.Click();
+                TestStack.White.UIItems.WindowItems.Window podgladPDF = application.GetWindow("PodgladPDF");
+                podgladPDF.Close();
+                TextBox komentarz = rozpatrzPropozycje.Get<TextBox>("komentarz");
+                komentarz.Text = "Dobra propozycja.";
+                Button zaakceptuj = rozpatrzPropozycje.Get<Button>("zaakceptuj");
+                zaakceptuj.Click();
+                TestStack.White.UIItems.WindowItems.Window potw = application.GetWindow("Komunikat");
+                Button yes = potw.Get<Button>("yesButton");
+                yes.Click();
+                wyborPropozycji.Close();
+                application.Close();
+            }
+            catch(Exception e) {
+                
+            }
+            finally
+            {
+                application.Kill();
+                
+            }
+        }
+
+        [TestMethod]
+        public void OdrzucPropozycje()
+        {
+            var applicationDirectory = TestContext.TestDeploymentDir;
+            Application application = Application.Launch(zamiennikPath);
+
+            try
+            {
+
+                TestStack.White.UIItems.WindowItems.Window mainwindow = application.GetWindow("Menu");
+                mainwindow.WaitWhileBusy();
+                Button rozpProp = mainwindow.Get<Button>("propozycje");
+                rozpProp.Click();
+                mainwindow.WaitWhileBusy();
+                TestStack.White.UIItems.WindowItems.Window wyborPropozycji = application.GetWindow("WyborPropozycji");
+                ListView propozycje = wyborPropozycji.Get<ListView>("Propozycje");
+
+                propozycje.Rows[0].Click();
+                TestStack.White.UIItems.WindowItems.Window rozpatrzPropozycje = application.GetWindow("Rozpatrz propozycję zamiennika");
+                Button kartyPrzedm = rozpatrzPropozycje.Get<Button>("pokazKartyPrzedm");
+                kartyPrzedm.Click();
+                TestStack.White.UIItems.WindowItems.Window podgladPDF = application.GetWindow("PodgladPDF");
+                podgladPDF.Close();
+                TextBox komentarz = rozpatrzPropozycje.Get<TextBox>("komentarz");
+                komentarz.Text = "Zła propozycja.";
+                Button odrzuc= rozpatrzPropozycje.Get<Button>("odrzuc");
+                odrzuc.Click();
+                TestStack.White.UIItems.WindowItems.Window potw = application.GetWindow("Komunikat");
+                Button yes = potw.Get<Button>("yesButton");
+                yes.Click();
+                TestStack.White.UIItems.WindowItems.Window wyborPropozycji2 = application.GetWindow("WyborPropozycji");
+                propozycje = wyborPropozycji2.Get<ListView>("Propozycje");
+
+                wyborPropozycji.Close();
+                application.Close();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(-1, 0, "GUI Element not found");
+            }
+            finally
+            {
+                application.Kill();
+
+            }
+        }
+
+        [TestMethod]
+        public void OdrzucPropozycjeBezKomentarza()
+        {
+            var applicationDirectory = TestContext.TestDeploymentDir;
+            Application application = Application.Launch(zamiennikPath);
+            
+            try
+            {
+
+                TestStack.White.UIItems.WindowItems.Window mainwindow = application.GetWindow("Menu");
+                mainwindow.WaitWhileBusy();
+                Button rozpProp = mainwindow.Get<Button>("propozycje");
+                rozpProp.Click();
+                mainwindow.WaitWhileBusy();
+                TestStack.White.UIItems.WindowItems.Window wyborPropozycji = application.GetWindow("WyborPropozycji");
+                ListView propozycje = wyborPropozycji.Get<ListView>("Propozycje");
+                propozycje.Rows[0].Click();
+                TestStack.White.UIItems.WindowItems.Window rozpatrzPropozycje = application.GetWindow("Rozpatrz propozycję zamiennika");
+                Button kartyPrzedm = rozpatrzPropozycje.Get<Button>("pokazKartyPrzedm");
+                kartyPrzedm.Click();
+                TestStack.White.UIItems.WindowItems.Window podgladPDF = application.GetWindow("PodgladPDF");
+                podgladPDF.Close();
+                Button odrzuc = rozpatrzPropozycje.Get<Button>("odrzuc");
+                odrzuc.Click();
+                TestStack.White.UIItems.WindowItems.Window potw = application.GetWindow("Komunikat");
+                Button yes = potw.Get<Button>("yesButton");
+                yes.Click();
+                wyborPropozycji.WaitWhileBusy();
+                propozycje = wyborPropozycji.Get<ListView>("Propozycje");
+
+                wyborPropozycji.Close();
+                application.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                application.Kill();
+
+            }
         }
     }
 }
