@@ -1,0 +1,88 @@
+\hypertarget{class_uslugi_1_1_zarzadzanie_propozycja}{}\doxysection{Uslugi.\+Zarzadzanie\+Propozycja Class Reference}
+\label{class_uslugi_1_1_zarzadzanie_propozycja}\index{Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}}
+
+
+Klasa dostarczająca metody do zarządzania propozycją zamiennika. (Skrypt transakcyjny)  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_uslugi_1_1_zarzadzanie_propozycja_af694d12f4157c591d651531c72be8eea}{zaakceptuj\+Propozycje}} (Propozycja\+\_\+zamiennika propozycja, string komentarz)
+\begin{DoxyCompactList}\small\item\em Metoda służąca do akceptowania propozycji przez opiniodawcę (zmiany statusu na \textquotesingle{}zweryfikowana\textquotesingle{}) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uslugi_1_1_zarzadzanie_propozycja_a1511df0d0e5b0a663ac79b836542ae4f}{odrzuc\+Propozycje}} (Propozycja\+\_\+zamiennika propozycja, string komentarz)
+\begin{DoxyCompactList}\small\item\em Metoda służąca do odrzucenia propozycji przez opiniodawce (zmiany statusu na \textquotesingle{}odrzucona\textquotesingle{}) \end{DoxyCompactList}\item 
+static List$<$ Propozycja\+\_\+zamiennika $>$ \mbox{\hyperlink{class_uslugi_1_1_zarzadzanie_propozycja_a7aea49402a8db41ff94a94d7e846e2a0}{znajdz\+Dostepne\+Propozycje}} ()
+\begin{DoxyCompactList}\small\item\em Metoda wyszukująca propozycje do rozpatrzenia. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uslugi_1_1_zarzadzanie_propozycja_ab0b00084a15473f3483dfcb55b21b36c}{ustaw\+Propozycje\+Jako\+Zgloszone}} ()
+\begin{DoxyCompactList}\small\item\em Metoda do testów ustawiająca wszystkie propozycje jako zgłoszone \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa dostarczająca metody do zarządzania propozycją zamiennika. (Skrypt transakcyjny) 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_uslugi_1_1_zarzadzanie_propozycja_a1511df0d0e5b0a663ac79b836542ae4f}\label{class_uslugi_1_1_zarzadzanie_propozycja_a1511df0d0e5b0a663ac79b836542ae4f}} 
+\index{Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}!odrzucPropozycje@{odrzucPropozycje}}
+\index{odrzucPropozycje@{odrzucPropozycje}!Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}}
+\doxysubsubsection{\texorpdfstring{odrzucPropozycje()}{odrzucPropozycje()}}
+{\footnotesize\ttfamily static void Uslugi.\+Zarzadzanie\+Propozycja.\+odrzuc\+Propozycje (\begin{DoxyParamCaption}\item[{Propozycja\+\_\+zamiennika}]{propozycja,  }\item[{string}]{komentarz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda służąca do odrzucenia propozycji przez opiniodawce (zmiany statusu na \textquotesingle{}odrzucona\textquotesingle{}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propozycja} & Propozycja do odrzucenia\\
+\hline
+{\em komentarz} & Komentarz opiniodawcy do dodania do propozycji\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uslugi_1_1_zarzadzanie_propozycja_ab0b00084a15473f3483dfcb55b21b36c}\label{class_uslugi_1_1_zarzadzanie_propozycja_ab0b00084a15473f3483dfcb55b21b36c}} 
+\index{Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}!ustawPropozycjeJakoZgloszone@{ustawPropozycjeJakoZgloszone}}
+\index{ustawPropozycjeJakoZgloszone@{ustawPropozycjeJakoZgloszone}!Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}}
+\doxysubsubsection{\texorpdfstring{ustawPropozycjeJakoZgloszone()}{ustawPropozycjeJakoZgloszone()}}
+{\footnotesize\ttfamily static void Uslugi.\+Zarzadzanie\+Propozycja.\+ustaw\+Propozycje\+Jako\+Zgloszone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda do testów ustawiająca wszystkie propozycje jako zgłoszone 
+
+\mbox{\Hypertarget{class_uslugi_1_1_zarzadzanie_propozycja_af694d12f4157c591d651531c72be8eea}\label{class_uslugi_1_1_zarzadzanie_propozycja_af694d12f4157c591d651531c72be8eea}} 
+\index{Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}!zaakceptujPropozycje@{zaakceptujPropozycje}}
+\index{zaakceptujPropozycje@{zaakceptujPropozycje}!Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}}
+\doxysubsubsection{\texorpdfstring{zaakceptujPropozycje()}{zaakceptujPropozycje()}}
+{\footnotesize\ttfamily static void Uslugi.\+Zarzadzanie\+Propozycja.\+zaakceptuj\+Propozycje (\begin{DoxyParamCaption}\item[{Propozycja\+\_\+zamiennika}]{propozycja,  }\item[{string}]{komentarz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda służąca do akceptowania propozycji przez opiniodawcę (zmiany statusu na \textquotesingle{}zweryfikowana\textquotesingle{}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em propozycja} & Propozycja do zaakceptowania\\
+\hline
+{\em komentarz} & Komentarz opiniodawcy do dodania do propozycji\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uslugi_1_1_zarzadzanie_propozycja_a7aea49402a8db41ff94a94d7e846e2a0}\label{class_uslugi_1_1_zarzadzanie_propozycja_a7aea49402a8db41ff94a94d7e846e2a0}} 
+\index{Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}!znajdzDostepnePropozycje@{znajdzDostepnePropozycje}}
+\index{znajdzDostepnePropozycje@{znajdzDostepnePropozycje}!Uslugi.ZarzadzaniePropozycja@{Uslugi.ZarzadzaniePropozycja}}
+\doxysubsubsection{\texorpdfstring{znajdzDostepnePropozycje()}{znajdzDostepnePropozycje()}}
+{\footnotesize\ttfamily static List$<$Propozycja\+\_\+zamiennika$>$ Uslugi.\+Zarzadzanie\+Propozycja.\+znajdz\+Dostepne\+Propozycje (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda wyszukująca propozycje do rozpatrzenia. 
+
+\begin{DoxyReturn}{Returns}
+Wszystkie propozycje z bazy danych o statusie Status\+\_\+propozycji.\+Zgloszona
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Zarzadzanie\+Propozycja.\+cs\end{DoxyCompactItemize}

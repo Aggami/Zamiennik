@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zamiennik"
         mc:Ignorable="d"
-        Title="Wyszukaj istniejące zamienniki" Height="1000" Width="1400"
+        WindowStartupLocation="CenterScreen"
+        Title="Wyszukaj istniejące zamienniki" Height="700" Width="1400"
         Style="{StaticResource CustomWindowStyle}">
 
     <Window.Resources>
@@ -83,7 +84,7 @@
                     <DataGrid.Columns >
                         <DataGridTextColumn Header="Kod kursu" Binding="{Binding Path=Kod_kursu}" ></DataGridTextColumn>
                         <DataGridTextColumn Header="Nazwy kursów" Binding="{Binding Path=Nazwa_kursu}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Kierunek" Binding="{Binding Path=ZZU}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="ECTS" Binding="{Binding Path=Punkty_ECTS}"></DataGridTextColumn>
                         <DataGridTextColumn Header="Wydział" Binding="{Binding Path=Punkty_ECTS}"></DataGridTextColumn>
                         <DataGridTextColumn Header="Typ" Binding="{Binding Path=Forma_kursu}"></DataGridTextColumn>
 
@@ -98,8 +99,8 @@
         <StackPanel Grid.Column="1" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10, 5, 20, 5">
                 <Label Content="Szukaj kursu: " Style="{StaticResource header}" Margin="0, 0, 10, 0"></Label>
-                <TextBox x:Name="searchBox" Width="100" Margin="0, 0, 10, 0"></TextBox>
-                <Button Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}" Click="on_search_button_Click"></Button>
+                <TextBox x:Name="searchBox" KeyDown="szukaj_keyHandler" Width="100" Margin="0, 0, 10, 0"></TextBox>
+                <Button x:Name="szukaj" Content="Szukaj" Margin="0, 0, 10, 0" Style="{StaticResource decisionButtons}" Click="on_search_button_Click"></Button>
             </StackPanel>
             <DataGrid x:Name="courses" HorizontalAlignment="center"  IsReadOnly="True" Margin="10" Visibility="Hidden" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" MouseUp="row_clicked">
                 <DataGrid.Columns >

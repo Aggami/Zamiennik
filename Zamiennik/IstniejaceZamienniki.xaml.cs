@@ -84,5 +84,13 @@ namespace Zamiennik
             PodgladZamiennika podglad = new PodgladZamiennika(zamiennik);
             podglad.ShowDialog();
         }
+
+        private void szukaj_keyHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                this.on_search_button_Click(sender, e);
+            }
+        }
     }
 }

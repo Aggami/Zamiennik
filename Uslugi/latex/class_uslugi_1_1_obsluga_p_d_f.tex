@@ -1,0 +1,82 @@
+\hypertarget{class_uslugi_1_1_obsluga_p_d_f}{}\doxysection{Uslugi.\+Obsluga\+P\+DF Class Reference}
+\label{class_uslugi_1_1_obsluga_p_d_f}\index{Uslugi.ObslugaPDF@{Uslugi.ObslugaPDF}}
+
+
+Klasa wspomagajaca obsluge pdf dla bazy danych Zamiennik  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_uslugi_1_1_obsluga_p_d_f_adc19cf566e1fddfcff86129859c1df92}{konwersja\+Na\+Byte}} (string sciezka)
+\begin{DoxyCompactList}\small\item\em Metoda konwertujaca plik pdf ze sciezki na tablice byte \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uslugi_1_1_obsluga_p_d_f_ae65238c50acbc7a6d9a935b029f73775}{zapis\+Do\+Kursu}} (string sciezka, Kurs kurs)
+\begin{DoxyCompactList}\small\item\em Metoda zapisujaca karte przedmiotu w formacie pdf ze sciezki do kursu w bazie danych \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_uslugi_1_1_obsluga_p_d_f_ae7d9b5758c4f5013357ba670566dfa83}{zapis\+Pdf\+Do\+Sciezki}} (Kurs kurs)
+\begin{DoxyCompactList}\small\item\em Metoda pobierajaca karte przedmiotu kursu w formie tablicy byte, konwertujaca ja na pdf i zapisujaca pod okreslona sciezka. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa wspomagajaca obsluge pdf dla bazy danych Zamiennik 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_uslugi_1_1_obsluga_p_d_f_adc19cf566e1fddfcff86129859c1df92}\label{class_uslugi_1_1_obsluga_p_d_f_adc19cf566e1fddfcff86129859c1df92}} 
+\index{Uslugi.ObslugaPDF@{Uslugi.ObslugaPDF}!konwersjaNaByte@{konwersjaNaByte}}
+\index{konwersjaNaByte@{konwersjaNaByte}!Uslugi.ObslugaPDF@{Uslugi.ObslugaPDF}}
+\doxysubsubsection{\texorpdfstring{konwersjaNaByte()}{konwersjaNaByte()}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} Uslugi.\+Obsluga\+P\+D\+F.\+konwersja\+Na\+Byte (\begin{DoxyParamCaption}\item[{string}]{sciezka }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda konwertujaca plik pdf ze sciezki na tablice byte 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sciezka} & Sciezka do pliku pdf\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tablica byte -\/ przekonwertowany plik
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uslugi_1_1_obsluga_p_d_f_ae65238c50acbc7a6d9a935b029f73775}\label{class_uslugi_1_1_obsluga_p_d_f_ae65238c50acbc7a6d9a935b029f73775}} 
+\index{Uslugi.ObslugaPDF@{Uslugi.ObslugaPDF}!zapisDoKursu@{zapisDoKursu}}
+\index{zapisDoKursu@{zapisDoKursu}!Uslugi.ObslugaPDF@{Uslugi.ObslugaPDF}}
+\doxysubsubsection{\texorpdfstring{zapisDoKursu()}{zapisDoKursu()}}
+{\footnotesize\ttfamily static void Uslugi.\+Obsluga\+P\+D\+F.\+zapis\+Do\+Kursu (\begin{DoxyParamCaption}\item[{string}]{sciezka,  }\item[{Kurs}]{kurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda zapisujaca karte przedmiotu w formacie pdf ze sciezki do kursu w bazie danych 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sciezka} & sciezka do pliku pdf -\/ karty przedmiotu\\
+\hline
+{\em kurs} & Kurs, dla ktorego ma byc zapisana karta przedmiotu\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uslugi_1_1_obsluga_p_d_f_ae7d9b5758c4f5013357ba670566dfa83}\label{class_uslugi_1_1_obsluga_p_d_f_ae7d9b5758c4f5013357ba670566dfa83}} 
+\index{Uslugi.ObslugaPDF@{Uslugi.ObslugaPDF}!zapisPdfDoSciezki@{zapisPdfDoSciezki}}
+\index{zapisPdfDoSciezki@{zapisPdfDoSciezki}!Uslugi.ObslugaPDF@{Uslugi.ObslugaPDF}}
+\doxysubsubsection{\texorpdfstring{zapisPdfDoSciezki()}{zapisPdfDoSciezki()}}
+{\footnotesize\ttfamily static string Uslugi.\+Obsluga\+P\+D\+F.\+zapis\+Pdf\+Do\+Sciezki (\begin{DoxyParamCaption}\item[{Kurs}]{kurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda pobierajaca karte przedmiotu kursu w formie tablicy byte, konwertujaca ja na pdf i zapisujaca pod okreslona sciezka. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kurs} & Kurs, dla ktorego pobieramy karte przedmiotu\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sciezka do ktorej zapisano plik pdf
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Obsluga\+P\+D\+F.\+cs\end{DoxyCompactItemize}

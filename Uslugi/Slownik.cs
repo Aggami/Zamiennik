@@ -6,8 +6,16 @@ using System.Text;
 
 namespace Uslugi
 {
+    /// <summary>
+    /// Klasa wspomagająca wyświetlanie wartości ENUM w warstwie prezentacji
+    /// </summary>
     public class Slownik
     {
+        /// <summary>
+        /// Metoda tlumaczaca enum Forma_kursu na string do wyswietlenia w warstwie prezentacji. 
+        /// </summary>
+        /// <param name="forma">Forma kursu do wyswietlenia</param>
+        /// <returns>Ciag znakow reprezentujacy dana forme kursu.</returns>
         public static string Forma_Kursu (Forma_kursu forma)
         {
             switch (forma){
@@ -30,6 +38,11 @@ namespace Uslugi
             }
         }
 
+        /// <summary>
+        /// Metoda tlumaczaca enum Typ_semestru na string do wyswietlenia w warstwie prezentacji.
+        /// </summary>
+        /// <param name="typ">Typ semestru do wyswietlenia</param>
+        /// <returns>Ciag znakow reprezentujacy typ semestru</returns>
         public static string Typ_semestru(Typ_semestru typ)
         {
             if (typ == global::Typ_semestru.Semestr_letni) return "Semestr letni";

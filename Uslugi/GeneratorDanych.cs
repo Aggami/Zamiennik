@@ -9,7 +9,8 @@ using Dostep_Do_Danych;
 namespace Uslugi
 {
     /// <summary>
-    /// Klasa służąca wprowadzeniu danych testowych do bazy
+    /// Klasa służąca wprowadzeniu danych testowych do bazy.
+    /// Zachowana na wypadek utraty testowej bazy danych. 
     /// </summary>
     public class GeneratorDanych
     {
@@ -164,7 +165,9 @@ namespace Uslugi
             db.SaveChanges();
         }
 
-
+        /// <summary>
+        /// Skrypt wspomagajacy dodawanie kart przedmiotow do bazy
+        /// </summary>
         public static void dodajKartyPrzedmiotow()
         {
             string sciezka = @"C:\Users\aggam\Documents\szkoła\STUDIA\ilovepdf_split-range\opis15.pdf";
@@ -182,7 +185,9 @@ namespace Uslugi
         }
         
 
-        //Dokończyć i wykonać
+        /// <summary>
+        /// Skrypt z dodatkowymi kursami do wprowadzenia
+        /// </summary>
         public static void DodajKursy()
         {
             Plan_studiow plW8Inf16 = planyRep.ZnajdzPoId(10);
@@ -193,6 +198,7 @@ namespace Uslugi
             string sciezka = @"C:\Users\aggam\Documents\szkoła\STUDIA\KARTY_INF_ST_Ii_2017\KARTY_INF_ST_Ii_2017\Podstawy_programowania.pdf";
             Kurs w8inf15PP = new Kurs("INZ1519L", "Podstawy programowania", 2, false, Forma_kursu.Laboratorium, null, 15, Typ_semestru.Semestr_zimowy, 1, new List<Efekt_ksztalcenia> { W8Inf15w4, W8Inf15u1 }, new List<Zamiennik_kursu>(), plW8Inf16, true);
             Kurs w8inf15PPWC = new Kurs("INZ1519Wc", "Podstawy programowania", 4, false, Forma_kursu.WykladCwiczenia, null, 15, Typ_semestru.Semestr_zimowy, 1, new List<Efekt_ksztalcenia> { W8Inf15w4, W8Inf15u1 }, new List<Zamiennik_kursu>(), plW8Inf16, true);
+           
 
             ObslugaPDF.zapisDoKursu(sciezka, w8inf15PP);
 

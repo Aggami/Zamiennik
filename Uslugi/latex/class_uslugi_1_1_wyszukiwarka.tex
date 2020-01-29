@@ -1,0 +1,63 @@
+\hypertarget{class_uslugi_1_1_wyszukiwarka}{}\doxysection{Uslugi.\+Wyszukiwarka Class Reference}
+\label{class_uslugi_1_1_wyszukiwarka}\index{Uslugi.Wyszukiwarka@{Uslugi.Wyszukiwarka}}
+
+
+Klasa wyszukujaca kursy z bazy danych  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ Kurs $>$ \mbox{\hyperlink{class_uslugi_1_1_wyszukiwarka_a37233e8cec90e938f4de9f4c5ed7367f}{Znajdz\+Kurs}} (string fraza)
+\begin{DoxyCompactList}\small\item\em Metoda wyszukujaca kursy zawierajace szukana fraze w swoim kodzie kursu/nazwie. \end{DoxyCompactList}\item 
+static List$<$ Zamiennik\+\_\+kursu $>$ \mbox{\hyperlink{class_uslugi_1_1_wyszukiwarka_a48fbc1c6182d45466d059c2c23824bcf}{Znajdz\+Zamienniki}} (Kurs kurs)
+\begin{DoxyCompactList}\small\item\em Metoda zwracajaca Zamienniki Kursow dla danego kursu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa wyszukujaca kursy z bazy danych 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_uslugi_1_1_wyszukiwarka_a37233e8cec90e938f4de9f4c5ed7367f}\label{class_uslugi_1_1_wyszukiwarka_a37233e8cec90e938f4de9f4c5ed7367f}} 
+\index{Uslugi.Wyszukiwarka@{Uslugi.Wyszukiwarka}!ZnajdzKurs@{ZnajdzKurs}}
+\index{ZnajdzKurs@{ZnajdzKurs}!Uslugi.Wyszukiwarka@{Uslugi.Wyszukiwarka}}
+\doxysubsubsection{\texorpdfstring{ZnajdzKurs()}{ZnajdzKurs()}}
+{\footnotesize\ttfamily static List$<$Kurs$>$ Uslugi.\+Wyszukiwarka.\+Znajdz\+Kurs (\begin{DoxyParamCaption}\item[{string}]{fraza }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda wyszukujaca kursy zawierajace szukana fraze w swoim kodzie kursu/nazwie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fraza} & Szukana fraza\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista kursow zawierajacych fraze
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uslugi_1_1_wyszukiwarka_a48fbc1c6182d45466d059c2c23824bcf}\label{class_uslugi_1_1_wyszukiwarka_a48fbc1c6182d45466d059c2c23824bcf}} 
+\index{Uslugi.Wyszukiwarka@{Uslugi.Wyszukiwarka}!ZnajdzZamienniki@{ZnajdzZamienniki}}
+\index{ZnajdzZamienniki@{ZnajdzZamienniki}!Uslugi.Wyszukiwarka@{Uslugi.Wyszukiwarka}}
+\doxysubsubsection{\texorpdfstring{ZnajdzZamienniki()}{ZnajdzZamienniki()}}
+{\footnotesize\ttfamily static List$<$Zamiennik\+\_\+kursu$>$ Uslugi.\+Wyszukiwarka.\+Znajdz\+Zamienniki (\begin{DoxyParamCaption}\item[{Kurs}]{kurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metoda zwracajaca Zamienniki Kursow dla danego kursu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kurs} & Kurs, dla ktorego szukamy zamiennikow\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista zamiennikow kursu
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Wyszukiwarka.\+cs\end{DoxyCompactItemize}
