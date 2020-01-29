@@ -49,6 +49,12 @@ namespace Uslugi
             else return "Semestr zimowy";
         }
 
+        public static string Czy_egzamin(bool czy_egzamin)
+        {
+            if (czy_egzamin) return "Kurs zakończony egzaminem.";
+            return "Kurs zakończony zaliczeniem.";
+        }
+
 
     }
 }

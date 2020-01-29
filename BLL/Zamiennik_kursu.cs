@@ -92,6 +92,20 @@ public class Zamiennik_kursu {
         }
     }
 
+    public string Wydzial
+    {
+        get
+        {
+            string s = "";
+            foreach (Kurs k in Kursy_skladowe)
+            {
+                s +="W"+ k.Plan_studiow.Kierunek.Wydzial.Numer_wydzialu+ ", ";
+            }
+            return s;
+
+        }
+    }
+
     public string Czy_egzamin
     {
         get
@@ -106,19 +120,7 @@ public class Zamiennik_kursu {
         }
     }
 
-    public string Wydzial
-    {
-        get
-        {
-            string s = "";
-            foreach (Kurs k in Kursy_skladowe)
-            {
-                s += k.Plan_studiow.Kierunek.Wydzial.Numer_wydzialu + "\n";
-            }
-            s = s.Trim();
-            return s;
-        }
-    }
+    
 
     public string Kierunek
     {

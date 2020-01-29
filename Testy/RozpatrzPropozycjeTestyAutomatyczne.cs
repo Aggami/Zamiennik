@@ -79,7 +79,8 @@ namespace Testy
                 application.Close();
             }
             catch(Exception e) {
-                
+                Assert.AreEqual(-1, 0, "GUI Element not found");
+
             }
             finally
             {
@@ -160,8 +161,8 @@ namespace Testy
                 Button odrzuc = rozpatrzPropozycje.Get<Button>("odrzuc");
                 odrzuc.Click();
                 TestStack.White.UIItems.WindowItems.Window potw = application.GetWindow("Komunikat");
-                Button yes = potw.Get<Button>("yesButton");
-                yes.Click();
+                Button ok = potw.Get<Button>("okButton");
+                ok.Click();
                 wyborPropozycji.WaitWhileBusy();
                 propozycje = wyborPropozycji.Get<ListView>("Propozycje");
 
@@ -170,6 +171,7 @@ namespace Testy
             }
             catch (Exception e)
             {
+                Assert.AreEqual(-1, 0, "GUI Element not found");
 
             }
             finally

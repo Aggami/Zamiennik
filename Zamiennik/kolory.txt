@@ -1,0 +1,11 @@
+﻿Plik pomocniczy z kolorami:
+
+#B4312C #B32017  kolor czerwony 
+#FDCD99 żółty
+#231F20 czarny
+#F6F6F6 biały
+
+
+inna paleta:
+#2d2d2a czarny
+#4c4c47 szary#848fa5 niebieskiJSOSowe kolory :HTML code:	#2A6E19 zielony ciemny#5DB956 zielony do przyciskow #F5FFF8 bialy do przyciskow #4A9A45 on clickHTML code:	#FEFFFD biale tloHTML code:	#EEF8ED #EEF9EB jasno zielony#00070D czarny#749560 brudnozielony do napisów#BFFFDE "biały do tekstów na zielonym"#side color		#27B374 seledynowy#28CAF1 niebieski#599EC7 lekkoszaro niebieski

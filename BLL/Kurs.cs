@@ -77,7 +77,7 @@ public class Kurs {
         string s = "";
         foreach (Efekt_ksztalcenia efekt in Efekty)
         {
-            s += efekt.Symbol_efektu_ksztalcenia + " " + efekt.Nazwa + "/n";
+            s += efekt.Symbol_efektu_ksztalcenia + " " + efekt.Nazwa + "\n";
         }
         return s;
     }

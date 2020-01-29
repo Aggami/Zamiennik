@@ -122,23 +122,7 @@ namespace Zamiennik
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            MessageBoxResult result = Komunikat.ShowWithResult("Czy anulować rozważanie propozycji? \n Treść komentarza nie zostanie zapisana", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                //odrzucPropozycje
-                Komunikat.Show("Anulowano");
-                DialogResult = false;
-                this.Hide();
-
-
-            }
-            else if (result == MessageBoxResult.No)
-            {
-
-            }
-            */
-
+            this.Hide();
         }
 
         private bool check_if_comment()
@@ -170,33 +154,3 @@ namespace Zamiennik
 }
 
 
-/*InitializeComponent();
-            propozycja.Kurs_zastepujacy.Add(
-                new Kurs()
-                {
-                    Punkty_ECTS = 2,
-                    Czy_egzamin = true,
-                    Czy_aktywny = false,
-                    Forma_kursu = Forma_kursu.Wyklad,
-                    //Karta_przedmiotu,
-                    Nazwa_kursu = "Programowanie Aplikacji Multimedialnych",
-                    Kod_kursu = "ZP435",
-                    ZZU = 180,
-                    Typ_semestru = Typ_semestru.Semestr_letni,
-                    Semestr = 6
-                });
-            k1Nazwa.Content = propozycja.Kurs_zastepowany.Nazwa_kursu;
-            k1Typ.Content = "Typ semestru: "+propozycja.Kurs_zastepowany.Typ_semestru;
-
-            k1Ects.Content = "Punkty ECTS: "+propozycja.Kurs_zastepowany.Punkty_ECTS.ToString();
-            k1Plan.Text = "W8, Informatyka 2017/2018";
-            k1Efekty.Text = "XYZ";
-
-
-            k2Nazwa.Content = propozycja.Kurs_zastepujacy[0].Nazwa_kursu;
-            k2Typ.Content = "Typ semestru: " + propozycja.Kurs_zastepujacy[0].Typ_semestru;
-
-            k2Ects.Content = "Punkty ECTS: "+ propozycja.Kurs_zastepujacy[0].Punkty_ECTS.ToString();
-            k2Plan.Text = "W8, Informatyka 2017/2018";
-            k2Efekty.Text = "XYZ";
- */

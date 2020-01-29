@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Uslugi;
 
 namespace Zamiennik
 {
@@ -29,9 +30,9 @@ namespace Zamiennik
             kod.Content = "Kod(y) kursu(ów): "+ zamiennik.Kursy_skladowe[0].Kod_kursu;
             typ.Content = "Forma zajęć: "+ zamiennik.Kursy_skladowe[0].Forma_kursu;
             ects.Content = "Punkty ECTS: "+ zamiennik.Kursy_skladowe[0].Punkty_ECTS;
-            czyegzamin.Content = zamiennik.Kursy_skladowe[0].Czy_egzamin;
+            czyegzamin.Content = Slownik.Czy_egzamin(zamiennik.Kursy_skladowe[0].Czy_egzamin);
             plan.Content = "Plan studiow: \n"+ zamiennik.Kursy_skladowe[0].Plan_studiow;
-
+            
             if (zamiennik.Kursy_skladowe.Count > 1)
             {
                 
@@ -39,7 +40,7 @@ namespace Zamiennik
                 kod2.Content = "Kod(y) kursu(ów): " + zamiennik.Kursy_skladowe[1].Kod_kursu;
                 typ2.Content = "Forma zajęć: " + zamiennik.Kursy_skladowe[1].Forma_kursu;
                 ects2.Content = "Punkty ECTS: " + zamiennik.Kursy_skladowe[1].Punkty_ECTS;
-                czyegzamin2.Content = zamiennik.Kursy_skladowe[1].Czy_egzamin;
+                czyegzamin2.Content = Slownik.Czy_egzamin(zamiennik.Kursy_skladowe[1].Czy_egzamin);
                 plan2.Content = "Plan studiow: \n" + zamiennik.Kursy_skladowe[1].Plan_studiow;
                 nazwa2.Visibility = Visibility.Visible;
                 kod2.Visibility = Visibility.Visible;

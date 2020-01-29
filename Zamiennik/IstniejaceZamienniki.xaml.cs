@@ -70,8 +70,8 @@ namespace Zamiennik
             if (kurs.Czy_egzamin) exam.Content = "Zakończony egzaminem. ";
             else exam.Content = "Kończy się zaliczeniem. ";
             hours.Content ="ZZU (całkowity nakład pracy):" + kurs.ZZU.ToString();
-
-            Zamienniki.ItemsSource = kurs.Zamienniki;
+            plans.Content = kurs.Plan_studiow;
+            Zamienniki.ItemsSource = new ObservableCollection<Zamiennik_kursu>(Wyszukiwarka.ZnajdzZamienniki(kurs)); ;
             detailsGrid.Visibility = Visibility.Visible;
             //plans
 

@@ -26,7 +26,7 @@ namespace Uslugi
         /// <summary>
         /// Repozytorium zamiennikow kursow
         /// </summary>
-        private static Repozytorium<Zamiennik_kursu> zamiennikiRep = new Repozytorium<Zamiennik_kursu>(db);
+        private static RepozytoriumZamiennik zamiennikiRep = new RepozytoriumZamiennik(db);
 
         /// <summary>
         /// Metoda wyszukujaca kursy zawierajace szukana fraze w swoim kodzie kursu/nazwie.
@@ -46,7 +46,7 @@ namespace Uslugi
         /// <returns>Lista zamiennikow kursu</returns>
         public static List<Zamiennik_kursu> ZnajdzZamienniki(Kurs kurs)
         {
-            return zamiennikiRep.ZnajdzPoPredykacie(z => z.Kurs_zastepowany == kurs);
+            return zamiennikiRep.ZnajdzPoPredykacie(z => z.Kurs_zastepowany.Kod_kursu == kurs.Kod_kursu);
         }
         
 

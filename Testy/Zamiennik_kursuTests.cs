@@ -19,15 +19,17 @@ namespace Tests
             Kurs kurs2 = new Kurs("INZ1517L", "Algorytmy i struktury danych", 3, false, Forma_kursu.Laboratorium, null, 30, Typ_semestru.Semestr_letni, 2, new List<Efekt_ksztalcenia> { }, new List<Zamiennik_kursu>(), plan, true);
             Kurs kursZastepowany = new Kurs("INP002263Wcl", "Algorytmy i struktury danych", 6, true, Forma_kursu.WykladCwiczeniaLaboratorium, null, 30, Typ_semestru.Semestr_letni, 2, new List<Efekt_ksztalcenia> (), new List<Zamiennik_kursu>(), null, true);
 
-            string czyEgzaminOczekiwane = "Kurs kończy się egzaminem.";
+            string oczekiwaneECTS = "4 +3 = 7";
+            string czyEgzaminOczekiwane = "Kurs zakończony egzaminem.";
 
             //ACT
 
             Zamiennik_kursu zamiennik = new Zamiennik_kursu(kursZastepowany, new List<Kurs> { kurs1, kurs2 });
 
             //ASSERT
-            Assert.AreEqual(czyEgzaminOczekiwane, zamiennik.Czy_egzamin);
-            Assert.AreEqual(czy)
+            Assert.AreEqual(czyEgzaminOczekiwane, zamiennik.Czy_egzamin, "Nieprawidłowe czy egzamin");
+            Assert.AreEqual(oczekiwaneECTS, zamiennik.Punkty_ECTS, "Złe punkty ECTS");
+            
             
         }
     }
