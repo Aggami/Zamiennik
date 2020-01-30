@@ -50,8 +50,12 @@ namespace Testy
         {
             var applicationDirectory = TestContext.TestDeploymentDir;
             Application application = Application.Launch(zamiennikPath);
-            
-            try
+            int success = 0;
+            /*Konieczne zastosowanie try, catch 
+             * - w przeciwnym przypadku przy niepowodzeniu testu proces nie zostanie zakończony 
+             * i zablokuje następne próby kompilacji. 
+            */
+        try
             {
                 
                 TestStack.White.UIItems.WindowItems.Window mainwindow = application.GetWindow("Menu");
@@ -77,16 +81,19 @@ namespace Testy
                 yes.Click();
                 wyborPropozycji.Close();
                 application.Close();
+                success = 1; // jeśli nie zostanie rzucony wyjątek, to sukces
             }
             catch(Exception e) {
-                Assert.AreEqual(-1, 0, "GUI Element not found");
-
+                
             }
             finally
             {
                 application.Kill();
                 
             }
+
+            Assert.AreEqual(1, success, "GUI Element not found");
+
         }
 
         [TestMethod]
@@ -94,6 +101,8 @@ namespace Testy
         {
             var applicationDirectory = TestContext.TestDeploymentDir;
             Application application = Application.Launch(zamiennikPath);
+            int success = 0;
+
 
             try
             {
@@ -124,16 +133,18 @@ namespace Testy
 
                 wyborPropozycji.Close();
                 application.Close();
+                success = 1; // jeśli nie zostanie rzucony wyjątek, to sukces
+
             }
             catch (Exception e)
             {
-                Assert.AreEqual(-1, 0, "GUI Element not found");
             }
             finally
             {
                 application.Kill();
 
             }
+            Assert.AreEqual(1, success, "GUI Element not found");
         }
 
         [TestMethod]
@@ -141,7 +152,9 @@ namespace Testy
         {
             var applicationDirectory = TestContext.TestDeploymentDir;
             Application application = Application.Launch(zamiennikPath);
-            
+            int success = 0;
+
+
             try
             {
 
@@ -168,10 +181,11 @@ namespace Testy
 
                 wyborPropozycji.Close();
                 application.Close();
+                success = 1; // jeśli nie zostanie rzucony wyjątek, to sukces
+
             }
             catch (Exception e)
             {
-                Assert.AreEqual(-1, 0, "GUI Element not found");
 
             }
             finally
@@ -179,6 +193,8 @@ namespace Testy
                 application.Kill();
 
             }
+            Assert.AreEqual(1, success, "GUI Element not found");
+
         }
     }
 }
