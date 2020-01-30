@@ -13,11 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dostep_Do_Danych", "Dostep_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uslugi", "Uslugi\Uslugi.csproj", "{8F6D9D5C-A85A-4D93-B61C-282A4E22B477}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plik ReadMe", "Plik ReadMe", "{49800D89-CB89-435E-A2C9-9540AE3FDD4C}"
-	ProjectSection(SolutionItems) = preProject
-		ReadMe.txt = ReadMe.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

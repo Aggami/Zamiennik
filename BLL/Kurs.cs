@@ -81,6 +81,13 @@ public class Kurs {
         }
         return s;
     }
-    
+
+    public string Wydzial
+    {
+        get
+        {
+            return "W" + Plan_studiow.Kierunek.Wydzial.Numer_wydzialu;
+        }
+    }
 
 }

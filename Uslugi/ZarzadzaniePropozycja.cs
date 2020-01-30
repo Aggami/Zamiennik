@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Uslugi
 {
     /// <summary>
-    /// Klasa dostarczająca metody do zarządzania propozycją zamiennika. (Skrypt transakcyjny)
+    /// Klasa dostarczająca metody do zarządzania propozycją zamiennika.
     /// </summary>
     public class ZarzadzaniePropozycja
     {

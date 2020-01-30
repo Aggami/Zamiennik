@@ -65,11 +65,11 @@ namespace Zamiennik
             //GeneratorDanych.DodajZamienniki(kurs);
             name.Text = kurs.Nazwa_kursu;
             code.Content = "Kod kursu: "+kurs.Kod_kursu;
-            type.Content = "Typ zajęć: "+kurs.Forma_kursu;
+            type.Content = "Typ zajęć: "+Slownik.Forma_Kursu(kurs.Forma_kursu);
             ects.Content = "Liczba punktów ECTS: "+kurs.Punkty_ECTS;
             if (kurs.Czy_egzamin) exam.Content = "Zakończony egzaminem. ";
             else exam.Content = "Kończy się zaliczeniem. ";
-            hours.Content ="ZZU (całkowity nakład pracy):" + kurs.ZZU.ToString();
+            hours.Content ="Liczba godzin zajęć w semestrze:" + kurs.ZZU.ToString();
             plans.Content = kurs.Plan_studiow;
             Zamienniki.ItemsSource = new ObservableCollection<Zamiennik_kursu>(Wyszukiwarka.ZnajdzZamienniki(kurs)); ;
             detailsGrid.Visibility = Visibility.Visible;

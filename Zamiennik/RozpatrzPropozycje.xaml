@@ -47,6 +47,7 @@
                 <Label Background="#2A6E19" Foreground="#F5FFF8" x:Name="k1Nazwa">Tytul 1</Label>
                 <Label x:Name="k1Typ" Content="Typ zajęć: "></Label>
                 <Label x:Name="k1Ects" Content="ECTS"></Label>
+                <Label x:Name="k1ZZU" Content="Liczba godzin w tygodniu: "></Label>
                 <Label Content="Plan studiow: "></Label>
                 <TextBlock x:Name="k1Plan" >Plan studiow</TextBlock>
                 <Label   Content="Kierunkowe efekty kształcenia: "></Label>
@@ -54,10 +55,11 @@
     
             </StackPanel>
             <StackPanel Style="{StaticResource Courses}" Width="400">
-                <Label Content="Kurs zastępowany: " FontFamily="Segoe UI Light" ></Label>
+                <Label Content="Kurs zastępujący: " FontFamily="Segoe UI Light" ></Label>
                 <Label Background="#2A6E19" Foreground="#F5FFF8" x:Name="k2Nazwa">Tytul 1</Label>
                 <Label x:Name="k2Typ" Content="Typ zajęć: "></Label>
                 <Label x:Name="k2Ects" Content="ECTS"></Label>
+                <Label x:Name="k2ZZU" Content="Liczba godzin w tygodniu: "></Label>
                 <Label Content="Plan studiow: "></Label>
                 <TextBlock x:Name="k2Plan" >Plan studiow</TextBlock>
                 <Label   Content="Kierunkowe efekty kształcenia: "></Label>

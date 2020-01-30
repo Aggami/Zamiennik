@@ -18,9 +18,9 @@ w szczególnoœci takich, które wymaga³y przy poleceniu SELECT za³¹czenia(Include(
 Dokumentacja:
 Zosta³a wygenerowana dla projektow: Uslugi, Logika Biznesowa
 i zapisana w folderze ../nazwaProjektu/html w formacie html.
-Projekt Uslugi ma kompletna dokumentacje dla prawie kazdej klasy. 
+Projekt Uslugi ma kompletna dokumentacje dla kazdej klasy. 
 Projekt Logika Biznesowa zawiera pe³n¹ dokumentacje dla klasy Propozycja_zamiennika.
-Uwaga: Musia³am usun¹æ polskie znaki, poniewa¿ generowana dokumentacja nie wyœwietla³a ich. Nie da³o siê te¿ wygenerowaæ dokumentacji dla ca³ego rozwi¹zania.
+Uwaga: Musia³am usun¹æ polskie znaki, poniewa¿ generowana dokumentacja nie wyœwietla³a	ich. Nie da³o siê te¿ wygenerowaæ dokumentacji dla ca³ego rozwi¹zania.
 
 
 Logika biznesowa: 
@@ -30,7 +30,7 @@ a inne wydzia³y nadaj¹ te cechy ka¿demu kursowi w grupie kursów z osobna.
 Aby da³o siê pogodziæ oba rozwi¹zania, przyjê³am, ¿e jeœli Grupa Kursów jest przez wydzia³ traktowana jak jeden przedmiot, 
 tak te¿ bêdzie trakowana w aplikacji i zapisywana jako kurs z Form¹ Kursu np. WykladCwiczenia.
 Poniewa¿ jest tak na Wydziale Informatyki i Zarz¹dzania, to wiêkszoœæ grup kursów jest wpisana w ten sposób.
-Klasa "Grupa_kursow" jest wykorzystywana dla wydzia³ów takich jak Wydzia³ Elektroniki, gdzie kursy maja odrebne kody i inne atrybuty.
+Klasa "Grupa_kursow" jest wykorzystywana dla wydzia³ów takich jak na przyk³ad Wydzia³ Elektroniki, gdzie kursy maja odrebne kody i w³asne efekty kszta³cenia.
 
 Przyjê³am te¿, ¿e chocia¿ zamiennik tworzony przez opiniodawcê mo¿e sk³adaæ siê z wielu kursów, student mo¿e proponowaæ tylko jeden. 
 

@@ -170,9 +170,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="kolory.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BLL\Logika_Biznesowa.csproj">
       <Project>{247a6882-b9d8-430d-aa59-7b46f6b9fdcf}</Project>
       <Name>Logika_Biznesowa</Name>

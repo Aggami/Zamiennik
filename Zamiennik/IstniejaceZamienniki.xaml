@@ -56,7 +56,7 @@
         <Style TargetType="{x:Type Label}">
             <Setter Property="Foreground" Value="#231F20"></Setter>
             <Setter Property="FontWeight" Value="Light"></Setter>
-
+            <Setter Property="FontSize" Value="17"></Setter>
         </Style>
     </Window.Resources>
     
@@ -67,7 +67,7 @@
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0" Background="#EEF8ED" >
             <StackPanel x:Name="details" DockPanel.Dock ="Top" Visibility="Hidden" Margin="10, 5,5,5">
-                <TextBlock x:Name="name" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource headerblock}" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+                <TextBlock x:Name="name" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource headerblock}" FontSize="22" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
                 <Label x:Name="code" Content="Kod kursu" />
                 <Label x:Name="type" Content="Typ" />
                 <Label x:Name="ects" Content="ECTS" />
@@ -106,7 +106,7 @@
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Kod kursu" Binding="{Binding Path=Kod_kursu}" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Nazwa kursu" Binding="{Binding Path=Nazwa_kursu}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Wydzial" Binding="{Binding Path=ZZU}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Wydzial" Binding="{Binding Path=Wydzial}"></DataGridTextColumn>
                     <DataGridTextColumn Header="ECTS" Binding="{Binding Path=Punkty_ECTS}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Typ" Binding="{Binding Path=Forma_kursu}"></DataGridTextColumn>
                     

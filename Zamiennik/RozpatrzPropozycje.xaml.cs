@@ -27,17 +27,19 @@ namespace Zamiennik
             InitializeComponent();
             this.propozycja = propozycja;
             k1Nazwa.Content = propozycja.Kurs_zastepowany.Nazwa_kursu;
-            k1Typ.Content = "Typ semestru: " + Slownik.Typ_semestru(propozycja.Kurs_zastepowany.Typ_semestru);
+            k1Typ.Content = "Typ semestru: " + Slownik.Forma_Kursu(propozycja.Kurs_zastepowany.Forma_kursu);
 
             k1Ects.Content = "Punkty ECTS: " + propozycja.Kurs_zastepowany.Punkty_ECTS.ToString();
+            k1ZZU.Content = "Liczba godzin w semestrze: "+ propozycja.Kurs_zastepowany.ZZU.ToString();
             k1Plan.Text = propozycja.Kurs_zastepowany.Plan_studiow.ToString();
             k1Efekty.Text = propozycja.Kurs_zastepowany.EfektyToString();
 
 
             k2Nazwa.Content = propozycja.Kurs_zastepujacy.Nazwa_kursu;
-            k2Typ.Content = "Typ semestru: " + Slownik.Typ_semestru(propozycja.Kurs_zastepujacy.Typ_semestru);
+            k2Typ.Content = "Typ semestru: " + Slownik.Forma_Kursu(propozycja.Kurs_zastepujacy.Forma_kursu);
 
             k2Ects.Content = "Punkty ECTS: " + propozycja.Kurs_zastepujacy.Punkty_ECTS.ToString();
+            k2ZZU.Content = "Liczba godzin w semestrze: " + propozycja.Kurs_zastepujacy.ZZU.ToString();
             k2Plan.Text = propozycja.Kurs_zastepujacy.Plan_studiow.ToString();
             k2Efekty.Text = propozycja.Kurs_zastepujacy.EfektyToString();
         }
